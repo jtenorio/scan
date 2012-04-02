@@ -1,0 +1,248 @@
+/* 
+    Document   : global2
+    Created on : Mar 5, 2012, 9:40:05 PM
+    Author     : Jorge
+    Description:
+        estilos complementarios a global.css
+*/
+
+.wrapper{
+	width:1099px;
+	margin:0 auto;
+}
+
+.grid-view{
+	width:1074px;
+	margin:0 auto;
+	overflow:hidden;
+/*   border:red 1px solid;*/
+    
+        
+}
+
+.grid-view table.items{
+    width:100%!important;
+	background:#FFF!important;
+    border: none!important;
+    border: 1px solid #D0E3EF;
+    border-collapse: collapse;
+/*    border: red 1px solid!important;*/
+    
+} 
+
+.grid-view .filters input, .grid-view .filters select {
+    border: 1px solid #CCCCCC;
+    width: 100%;
+}
+
+.grid-view table.items tr.odd{
+    background:#BDC4DC;
+    border: none!important;
+}
+
+.grid-view table.items th {	
+    background:#DFE2EE;		
+    padding:5px;
+    border: none!important;
+    color: white;
+    text-align: center;
+    
+}
+
+.grid-view table.items th a{
+    background:url(../images/upBancos.jpg) left center no-repeat;
+    padding-left:15px;
+    font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+    font-weight:bold;
+    color:#253B8B;
+    border: none!important;
+}
+
+.grid-view table.items td {
+    padding:3px;
+    padding-left:15px;
+    border: none!important;
+}
+   
+.grid-view .pager {
+    margin: 5px 0 0;
+    text-align: center;
+}
+
+ul.yiiPager .selected a {
+    background: none repeat scroll 0 0 #366C36;
+    color: #FFFFFF;
+    font-weight: bold;
+}
+
+ul.yiiPager a:link, ul.yiiPager a:visited {
+   
+    font-weight: bold;
+    padding: 1px 6px;
+    text-decoration: none;
+    border:none!important;
+}
+ 
+.form{
+    padding: 20px;
+    max-width: 1056px;
+    overflow: auto;
+    background-color: white;
+}
+
+form table  {
+    width:100%!important;
+    
+    
+}
+
+form table tr td{
+    padding: 8px;
+    border:  #366C36 1px solid;
+    font-size: 14px;
+    color:#23427A;
+}
+
+.note {
+    color: red ;
+}
+
+form {
+     padding: 20px;
+      max-width: 1056px;
+       overflow: auto;
+       background-color: white;
+    
+}
+
+form label{
+/*     border:red 1px solid;*/
+     padding: 8px;
+     font-size: 14px;
+     color:#23427A;
+     display: block;
+     
+} 
+
+form input{
+      margin: 8px;
+      background-color: #CDE6CD;
+      color:#23427A;
+     
+}
+
+form .required{
+   width: 236px;
+    font-weight: bold;
+    
+}
+
+/*LogIn*/
+#login{
+	width:598px;
+	height:313px;
+	background:url(../images/bgLogin.png) no-repeat;	
+	margin:0 auto;
+	margin-top:108px;
+	padding-top:12px;
+}
+#login form{
+    margin-top:0px;
+    padding-left:60px;
+    width:auto;
+    background: none;
+    overflow: hidden;
+/*    border: 1px red solid;*/
+    height:auto;
+}
+#login h3{
+	background:url(../images/urbano.png) no-repeat;
+	width:177px;
+	height:0px;
+	padding-top:63px;
+	display:block;
+	overflow:hidden;
+	margin:0 auto;
+}
+#login table{
+	margin:0 auto;
+	width:430px;	
+	margin-top:10px;
+}
+#login table tr td{
+	padding:8px 5px;	
+	font-size:17px;
+	color:#000;
+    border:none !important;
+    
+}
+#login input{
+	padding:4px;	
+	border:#5A5758 1px solid;
+	color:#666!important;
+	width:300px;
+    background-color: white!important;
+    margin:0px;
+}
+#login select{
+	padding:4px;	
+	border:#5A5758 1px solid;
+	color:#666;
+	width:310px;
+}
+#login .loginButton{
+	background:url(../images/loginButton.png) no-repeat;
+	width:157px;
+	height:0px;
+	padding-top:39px;
+	display:block;
+	overflow:hidden;
+	margin:0 auto;
+	cursor:pointer;
+	border:none;
+}
+#login form .required{
+    
+    width: auto;
+    font-size:17px;
+    color:#000;
+    font-weight:normal;
+/*    border: 1px red solid;*/
+    
+}
+#login form label{
+    padding:0px;
+    width: auto;
+    font-size:17px;
+    color:#000;
+    font-weight:normal;
+    
+}
+#botonLogin{
+    background:url(../images/loginButton.png) no-repeat;
+	width:157px;
+	height:0px;
+	padding-top:39px;
+	display:block;
+	overflow:hidden;
+	margin:0 auto;
+	cursor:pointer;
+	border:none!important;
+}
+h4.scan{
+	background:url(../images/scan.png) no-repeat;
+	width:85px;
+	height:0px;
+	padding-top:35px;
+	display:block;
+	overflow:hidden;
+	margin:0 auto;
+}
+p.copyright{
+	color:#6C676E;
+	margin:5px 0;	
+}
+#footer{
+	clear:both;
+	text-align:center;	
+}

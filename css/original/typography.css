@@ -1,0 +1,370 @@
+/*--------------------------------------------------------------
+# Modish - April 2008 (for Joomla 1.5)
+# Recoded version: May 2009
+# Copyright (C) 2007-2008 Gavick.com. All Rights Reserved.
+# License: Copyrighted Commercial Software
+# Website: http://www.gavick.com
+# Support: support@gavick.com 
+---------------------------------------------------------------*/
+/* Typography 
+---------------------------------------------------------------*/
+p{
+	margin: 10px 0;
+}
+
+/* Code */
+pre,
+.code1,
+.code2{
+	margin:10px 0 15px;
+	padding:10px 15px;
+	font-size:11px;
+	font-family: 'Curier New', monospace;	
+}
+
+.code2{
+	padding-left:20px;
+	font-family: 'Curier New', monospace;
+}
+.code3{
+	padding:0 0 5px 20px;
+	font-family: 'Curier New', monospace;
+}
+
+.code3 h4{
+	width:35px;
+	position:relative;
+	top:-10px;
+	margin:-3px 0 -10px 11px;
+	padding:0 0 0 10px;
+	font-size:14px;
+	font-weight:normal;
+}
+
+/* Warnings */
+
+p.info1,p.info2,p.info3,p.info4{background:transparent url('../images/icons/info.gif') no-repeat left center; }
+p.warning1,p.warning2,p.warning3,p.warning4{background:transparent url('../images/icons/warning.gif') no-repeat left center; }
+p.tips1,p.tips2,p.tips3,p.tips4{ background:transparent url('../images/icons/tips.gif') no-repeat left center; }
+p.info1,p.info3,p.warning1,p.warning3,p.tips1,p.tips3{padding-left:30px;}
+
+p.info2,
+p.info4{
+	padding:3px 3px 3px 30px;
+	border-top:#3399ff solid 1px;
+	border-bottom:#3399ff solid 1px;
+	background-position:3px center;
+}
+p.info3,
+p.info4{
+	background-color:#f0f6fe;
+	background-position: 7px center;
+	min-height:14px;
+	padding:12px 0 14px 30px;
+}
+p.warning2,
+p.warning4{
+	border-top:#f71212 solid 1px;
+	border-bottom:#f71212 solid 1px;
+	padding:3px 3px 3px 30px;
+	background-position: 3px center;
+}
+p.warning3,
+p.warning4{
+	background-color:#ffeeea;
+	background-position: 7px center;
+	min-height:14px;
+	width:auto;
+	padding:12px 0 14px 30px;
+}
+p.warning4{
+	border-top:#f71212 solid 1px;
+	border-bottom:#f71212 solid 1px;
+}
+p.tips2,
+p.tips4{
+	border-top:#fde647 solid 1px;
+	border-bottom:#fde647 solid 1px;
+	padding:3px 3px 3px 30px;
+	background-position:3px center;
+}
+p.tips3,
+p.tips4{
+	display:block;
+	background-color:#fdffca;
+	background-position: 7px center;
+	min-height:14px;
+	padding:12px 0 14px 30px;
+}
+p.tips4{
+	border-top:#fde647 solid 1px;
+	border-bottom:#fde647 solid 1px;
+}
+/* Headers */
+h1,h2,h3,h4{margin:25px 0 15px 0;}
+/* Dropcaps */
+span.Dropcap1,
+span.Dropcap2,
+span.Dropcap3{
+	font-size: 60px;
+	display: block;
+	float: left;
+	font-family:'Times New Roman', serif;
+}
+span.Dropcap1{
+	height:61px;
+	margin:-26px 5px 1px 0;
+}
+p.Dropcap2{
+	padding:0 0 0 50px;
+}
+span.Dropcap2{
+	margin:-26px 0 0 -50px;
+}
+p.Dropcap3{
+	
+}
+span.Dropcap3{
+	height:61px;
+	margin:-37px 5px 0 0;
+}
+/* Blockquotes */
+blockquote{
+	font-style:italic;
+	margin:20px 0;
+	float:left;
+}
+blockquote div.blockquote1{
+	background:transparent url(../images/style1/gk_stuff/typography/open1.png)  no-repeat left bottom;
+}
+blockquote div.blockquote1 div{
+	padding:0 17px;
+	background:transparent url(../images/style1/gk_stuff/typography/close1.png)  no-repeat right top;
+}
+blockquote div.blockquote2{
+	background:transparent url(../images/style1/gk_stuff/typography/open1.png)  no-repeat left top;
+}
+blockquote div.blockquote2 div{
+	padding:0 17px;
+	background:transparent url(../images/style1/gk_stuff/typography/close1.png)  no-repeat right top;
+}
+blockquote div.blockquote3{
+	background:transparent url(../images/style1/gk_stuff/typography/open2.png) no-repeat left bottom;
+}
+blockquote div.blockquote3 div{
+	padding:5px 27px 0 27px;
+	background:transparent url(../images/style1/gk_stuff/typography/close2.png) no-repeat right top;
+}
+blockquote div.blockquote4{
+	background:transparent url(../images/style1/gk_stuff/typography/open2.png) no-repeat left top;
+	padding-top:2px;
+}
+blockquote div.blockquote4 div{
+	padding:5px 27px 0 27px;
+	background:transparent url(../images/style1/gk_stuff/typography/close2.png) no-repeat right top;
+}
+/* Floated blocks */
+.blockTextLeft,
+.blockTextRight,
+.blockTextCenter{
+	display:block;
+	width:30%;
+	padding:15px;
+	font-style:italic;
+}
+.blockTextLeft{
+	float:left;
+	text-align:left;
+}
+.blockTextRight{
+	float:right;
+	text-align:right;
+}
+.blockTextCenter{
+	margin:0 auto;
+	text-align:center;
+}
+/* Legends */
+div.legend1 h4,
+div.legend2 h4,
+div.legend3 h4,
+div.legend4 h4,
+div.legend5 h4,
+div.legend6 h4{
+	width:50px;
+	background: #fff;
+	position:relative;
+	top:-9px;
+	left:11px;
+	margin:-4px 0 -9px 0;
+	padding:0 3px;
+	font-size:14px;
+	font-weight:normal;
+}
+div.legend3 h4:first-child,
+div.legend5 h4:first-child{
+	background:#e7e7e7;
+}
+div.legend4 h4:first-child,
+div.legend6 h4:first-child{
+	border:solid 1px #666;
+}
+div.legend1,
+div.legend5,
+div.legend6{
+	border:solid 1px #666;
+	margin:25px 0;
+}
+div.legend2,
+div.legend3,
+div.legend4{
+	border-top:solid 1px #666;
+	border-bottom:solid 1px #666;
+	margin:25px 0;	
+}
+div.legend1 p,
+div.legend2 p,
+div.legend3 p,
+div.legend4 p,
+div.legend5 p,
+div.legend6 p{
+	margin:7px;
+}
+/* icons 
+.audio,.creditcard,.email,.feed,.help,.webcam,.images,.lock,.printer,.report,.script,.time,.user,.world,.camera,.brick,.box,
+.cart,.cd,.chart_bar,.chart_line,.chart_pie,.clock,.cog,.coins,.compress,.computer,.cross,.disk,.error,.accept,.add,.calendar,
+.exclamation,.film,.folder,.group,.heart,.house,.image,.information,.magnifier,.money,.new,.note,.page,.page_white,.plugin{
+	padding:0 0 2px 30px;
+}*/
+.audio{background:transparent url('../images/icons/audio.gif') no-repeat left top;}
+.creditcard{background:transparent url('../images/icons/credit.gif') no-repeat left top;}
+.email{background:transparent url('../images/icons/email.gif') no-repeat left top;}
+.feed{background:transparent url('../images/icons/feed.gif') no-repeat left top;}
+.help{background:transparent url('../images/icons/help.gif') no-repeat left top;}
+.webcam{background:transparent url('../images/icons/webcam.gif') no-repeat left top;}
+.images{background:transparent url('../images/icons/images.png') no-repeat left top;}
+.lock{background:transparent url('../images/icons/lock.png') no-repeat left top;}
+.printer{background:transparent url('../images/icons/printer.png') no-repeat left top;}
+.report{background:transparent url('../images/icons/report.png') no-repeat left top;}
+.script{background:transparent url('../images/icons/script.png') no-repeat left top;}
+.time{background:transparent url('../images/icons/time.png') no-repeat left top;}
+.user{background:transparent url('../images/icons/user.png') no-repeat left top;}
+.world{background:transparent url('../images/icons/world.png') no-repeat left top;}
+.cart{background:transparent url('../images/icons/cart.png') no-repeat left top;}
+.cd{background:transparent url('../images/icons/cd.png') no-repeat left top;}
+.chart_bar{background:transparent url('../images/icons/chart_bar.png') no-repeat left top;}
+.chart_line{background:transparent url('../images/icons/chart_line.png') no-repeat left top;}
+.chart_pie{background:transparent url('../images/icons/chart_pie.png') no-repeat left top;}
+.clock{background:transparent url('../images/icons/clock.png') no-repeat left top;}
+.cog{background:transparent url('../images/icons/cog.png') no-repeat left top;}
+.coins{background:transparent url('../images/icons/coins.png') no-repeat left top;}
+.compress{background:transparent url('../images/icons/compress.png') no-repeat left top;}
+.computer{background:transparent url('../images/icons/computer.png') no-repeat left top;}
+.cross{background:transparent url('../images/icons/cross.png') no-repeat left top;}
+.disk{background:transparent url('../images/icons/disk.png') no-repeat left top;}
+.error{background:transparent url('../images/icons/error.png') no-repeat left top;}
+.exclamation{background:transparent url('../images/icons/exclamation.png') no-repeat left top;}
+.film{background:transparent url('../images/icons/film.png') no-repeat left top;}
+.folder{background:transparent url('../images/icons/folder.png') no-repeat left top;}
+.group{background:transparent url('../images/icons/group.png') no-repeat left top;}
+.heart{background:transparent url('../images/icons/heart.png') no-repeat left top;}
+.house{background:transparent url('../images/icons/house.png') no-repeat left top;}
+.image{background:transparent url('../images/icons/image.png') no-repeat left top;}
+.information{background:transparent url('../images/icons/information.png') no-repeat left top;}
+.magnifier{background:transparent url('../images/icons/magnifier.png') no-repeat left top;}
+.money{background:transparent url('../images/icons/money.png') no-repeat left top;}
+.new{background:transparent url('../images/icons/new.png') no-repeat left top;}
+.note{background:transparent url('../images/icons/note.png') no-repeat left top;}
+.page{background:transparent url('../images/icons/page.png') no-repeat left top;}
+.page_white{background:transparent url('../images/icons/page_white.png') no-repeat left top;}
+.plugin{background:transparent url('../images/icons/plugin.png') no-repeat left top;}
+.accept{background:transparent url('../images/icons/accept.png') no-repeat left top;}
+.add{background:transparent url('../images/icons/add.png') no-repeat left top;}
+.camera{background:transparent url('../images/icons/camera.png') no-repeat left top;}
+.brick{background:transparent url('../images/icons/brick.png') no-repeat left top;}
+.box{background:transparent url('../images/icons/box.png') no-repeat left top;}
+.calendar{background:transparent url('../images/icons/calendar.png') no-repeat left top;}
+/* Highlights */
+.highlight-1,
+.highlight-2,
+.highlight-3,
+.highlight-4{
+	padding:1px 5px;
+}
+/* Colors for spans */
+span.clear,
+span.clear-1,
+span.clear-2,
+span.color,
+span.color-1,
+span.color-2,
+span.color-3,
+span.color-4,
+span.color-5,
+span.color-6,
+span.color-7{
+	display: block;
+	padding: 5px 10px;
+	margin-bottom: 10px;
+	clear: both;
+}
+/* ordered lists */
+ol{margin-left:18px;}
+ol.dec{list-style-type:decimal;}
+ol.roman{list-style-type:upper-roman;}
+ol.alpha{list-style-type:lower-alpha;}
+ol.decimalLeadingZero{list-style-type:decimal-leading-zero;}
+/* unordered lists */
+ul.circle2{list-style-type:circle; list-style-image: none;}
+ul.square1{list-style-type:square; list-style-image: none;}
+
+ul.circle1 li,
+ul.circle2 li,
+ul.square1 li,
+ul.square2 li,
+ul.square3 li,
+ul.bullet1 li,
+ul.bullet2 li,
+ul.bullet3 li,
+ul.bullet4 li{
+	background: none;
+	padding-left: 0;
+	margin-left: 10px;
+}
+/* Numbers */
+div.number1 span{
+	padding:4px 4px 5px 4px;
+
+}
+div.number2 span{
+	padding:4px 4px 5px 4px;
+	color:#fff;
+}
+/* Definition lists */
+dl.def1 dt,
+dl.def2 dt,
+dl.def3 dt{
+	margin:10px 0 5px 0;
+}
+dl.def1 dd,
+dl.def2 dd,
+dl.def3 dd{
+	padding-left:25px;
+}
+dl.def2 dt{
+	text-decoration:underline;
+}
+dl.def3 dt{
+	font-weight:bold;
+}
+/* acronyms and abbrs */
+acronym,
+abbr{
+	border-bottom-width:1px;
+	border-bottom-style:dotted;
+}
+acronym:hover,
+abbr:hover{
+	border-bottom-style:solid;
+	cursor:pointer;
+}

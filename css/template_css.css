@@ -1,0 +1,42 @@
+
+/* botones */
+#botones{
+    padding:10px;
+    margin: 0 auto;
+    
+    height: 45px;
+}
+#button_save{
+    background-image: url('../images/imagenes/guardar.png');
+    padding: 0 5px;
+    width: 45px;
+    height:  45px;
+    float: left;
+
+}
+#button_modify{
+    background-image: url('../images/imagenes/pdf.png');
+    padding: 0 5px;
+    width: 45px;
+    height:  45px;
+    float: left;
+
+}
+#button_delete{
+    background-image: url('../images/imagenes/eliminar.png');
+    padding: 0 5px;
+    width: 45px;
+    height:  45px;
+    float: left;
+
+}
+#button_exit{
+    background-image: url('../images/imagenes/pdf.png');
+    padding: 0 5px;
+    width: 45px;
+    height:  45px;
+    float: left;
+
+}
+
+

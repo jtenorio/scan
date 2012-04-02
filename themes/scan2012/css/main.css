@@ -1,0 +1,331 @@
+body{
+	background:#DFE2EE;	
+	font-family:Arial, Helvetica, sans-serif;
+}
+.wrapper{
+	width:1099px;
+	margin:0 auto;	
+}
+/*LogIn*/
+#login{
+	width:598px;
+	height:313px;
+	background:url(../images/bgLogin.png) no-repeat;	
+	margin:0 auto;
+	margin-top:108px;
+	padding-top:12px;
+}
+#login h3{
+	background:url(../images/urbano.png) no-repeat;
+	width:177px;
+	height:0px;
+	padding-top:63px;
+	display:block;
+	overflow:hidden;
+	margin:0 auto;
+}
+#login table{
+	margin:0 auto;
+	width:430px;	
+	margin-top:10px;
+}
+#login table tr td{
+	padding:10px 5px;	
+	font-size:17px;
+	color:#000;
+}
+#login input{
+	padding:4px;	
+	border:#5A5758 1px solid;
+	color:#666;
+	width:300px;
+}
+#login select{
+	padding:4px;	
+	border:#5A5758 1px solid;
+	color:#666;
+	width:310px;
+}
+#login .loginButton{
+	background:url(../images/loginButton.png) no-repeat;
+	width:157px;
+	height:0px;
+	padding-top:39px;
+	display:block;
+	overflow:hidden;
+	margin:0 auto;
+	cursor:pointer;
+	border:none;
+}
+h4.scan{
+		background:url(../images/scan.png) no-repeat;
+	width:85px;
+	height:0px;
+	padding-top:35px;
+	display:block;
+	overflow:hidden;
+	margin:0 auto;
+}
+p.copyright{
+	color:#6C676E;
+	margin:5px 0;	
+}
+/*Fin LogIn*/
+#header h1 a{
+	background:url(../images/logo.jpg) no-repeat;
+	width:172px;
+	height:0px;
+	padding-top:69px;
+	display:block;
+	overflow:hidden;
+	margin:21px 0 11px 28px;
+}
+#menu{
+	background:url(../images/tileMenu.jpg) repeat-x;
+	height:32px;
+	width:100%;
+	margin-bottom:20px;
+}
+#buttons{
+	width:526px;
+	overflow:hidden;
+	float:left;
+}
+#buttons ul{
+	margin:0px;
+	padding:0px;	
+}
+#buttons ul li{
+	list-style:none;
+	float:left;
+	width:99px;
+	height:104px;
+	background:url(../images/bgButtons.jpg) no-repeat;
+	margin-left:5px;
+	margin-top:2px;
+	padding:24px 13px 0px 13px;	
+}
+#buttons ul li a{
+	background:url(../images/libro.jpg) top center no-repeat;
+	display:block;
+	width:100%;
+	padding-top:48px;
+	text-align:center;
+	color:#373737;
+}
+/*******BANCOS*******/
+#listBancos{
+	background:url(../images/bgBancos.png) no-repeat;
+	width:1074px;
+	height:67px;
+	margin:0 auto;
+}
+	#listBancos h2{
+		background:url(../images/tituloBancos.png) no-repeat;
+		float:left;
+		width:177px;
+		height:0px;
+		padding-top:51px;
+		overflow:hidden;
+		margin:8px 0 0 10px;
+	}
+	#listBancos ul{
+		float:right;
+		margin:0px;
+		padding:4px;	
+	}
+		#listBancos ul li{
+			float:left;
+			width:62px;
+			height:62px;
+			padding-top:1px;
+			margin-right:3px;
+			list-style:none;
+			background:url(../images/bgListBancos.png) no-repeat;
+		}
+			#listBancos ul li a{
+				display:block;
+				width:55px;
+				height:12px;
+				padding-top:36px;
+				text-align:center	;
+				font-size:12px;
+				font-weight:bold;
+			}
+			#listBancos ul li.nuevo a{
+				background:url(../images/nuevo.jpg) top center no-repeat;
+			}
+			#listBancos ul li.borrar a{
+				background:url(../images/borrar.jpg) top center no-repeat;
+			}
+			#listBancos ul li.exportar a{
+				background:url(../images/exportar.jpg) top center no-repeat;
+			}
+			#listBancos ul li.importar a{
+				background:url(../images/importar.jpg) top center no-repeat;
+			}
+			#listBancos ul li.listar a{
+				background:url(../images/listar.jpg) top center no-repeat;
+			}
+			#listBancos ul li.ayuda a{
+				background:url(../images/ayuda.jpg) top center no-repeat;
+			}
+#tablaBancos{
+	width:1074px;
+	margin:0 auto;
+	overflow:hidden;
+}
+	#tablaBancos table{
+		width:100%;
+		background:#FFF;
+	}
+		#tablaBancos table tr.tablaOrden td{
+			background:#DFE2EE;
+			padding:5px;
+		}
+		#tablaBancos table tr.tablaOrden td a{
+			background:url(../images/upBancos.jpg) left center no-repeat;
+			padding-left:15px;
+			font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+			font-weight:bold;
+			color:#253B8B;
+		}
+		#tablaBancos table tr.impar{
+			background:#BDC4DC;
+		}
+		#tablaBancos table td{
+			padding:3px;
+			padding-left:15px;
+		}
+		#tablaBancos table td.u{
+			text-align:center;
+			text-decoration:underline;
+		}
+#paginador{
+	text-align:center;
+	padding:10px 0;	
+}
+#busqueda.closed{
+	background:url(../images/bgBuscador.png) top right no-repeat;	
+	width:244px;
+	height:336px;
+	position:absolute;
+	top:240px;
+	left:-190px;
+}
+#busqueda.open{
+	background:url(../images/bgBuscador.png) top right no-repeat;	
+	width:244px;
+	height:336px;
+	position:absolute;
+	top:240px;
+	left:0px;
+}
+	#busqueda table{
+		margin:40px 0 0 10px;	
+	}
+		#busqueda table td{
+			color:#FFF;
+			padding:9px 5px;	
+		}
+		#busqueda table input{
+			padding:3px;	
+			color:#444;
+			font-size:11px;
+			width:100px;
+			border:none;
+		}
+		#busqueda table input#desde, #busqueda table input#hasta{
+			width:80px;	
+			background:#FFF url(../images/callImg.jpg) top right no-repeat;
+			cursor:pointer;
+		}
+		#busqueda table input#buscar{
+			width:92px;	
+			height:30px;
+			background:url(../images/buscar.png)no-repeat;
+			cursor:pointer;
+		}
+		#busqueda a.open{
+			background:url(../images/openBusqueda.png) no-repeat;
+			height:0px;
+			width:38px;
+			padding-top:38px;
+			overflow:hidden;
+			display:block;
+			position:absolute;
+			right:5px;
+			top:150px;	
+		}
+	#busqueda #close{
+		display:none;	
+	}
+.tabs{
+	float:left;
+	width:570px;	
+}
+ul.tabNavigation {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+ul.tabNavigation li {
+	display: inline;
+	width:150px;
+	height:25px;
+	float:left;
+}
+
+ul.tabNavigation li a {
+		width:150px;
+		height:25px;
+		display:block;
+		background:url(../images/tabGray.png) no-repeat;
+		color: #7B7B7B;
+		text-decoration: none;
+		text-align:center;
+		padding-top:6px;
+}
+
+ul.tabNavigation li a.selected,
+ul.tabNavigation li a:hover {
+		background:url(../images/tabWhite.png) no-repeat;
+		color: #373737;
+		font-weight:bold;
+}
+
+ul.tabNavigation li a:focus {
+				outline: 0;
+}
+
+div.tabs div {
+				clear:both;
+}
+div.tabs div div.sup {
+	background: url(../images/bgContentTabUp.png) no-repeat;	
+	width:548px;
+	height:15px;
+}
+div.tabs div div.content {
+	background: url(../images/bgContentTab.png) repeat-y;	
+	width:528px;
+	padding:10px;
+	overflow:hidden;
+}
+div.tabs div div.bottom {
+	background: url(../images/bgContentTabBottom.png) no-repeat;	
+	width:548px;
+	height:18px;
+}
+div.tabs > div h2 {
+				margin-top: 0;
+}
+
+.waste {
+				min-height: 1000px;
+}
+#footer{
+	clear:both;
+	text-align:center;	
+}
