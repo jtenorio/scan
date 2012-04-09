@@ -23,10 +23,14 @@
 
         <div id="izquierda">
             <script type="text/javascript">
-                sendPage('null', '<?php echo Yii::app()->request->baseUrl;?>/index.php/crmColaboracion/Menu', 'izquierda');
+                sendPage('null', '<?php echo Yii::app()->request->baseUrl;?>/index.php/crmColaboracion/menu', 'izquierda');
             </script>
         </div>
-		<div id="agenda"><?php echo $content; ?></div>
+		<div id="agenda"><?php echo $content; ?>
+             <script type="text/javascript">
+                sendPage('null', '<?php echo Yii::app()->request->baseUrl;?>/index.php/crmColaboracion/calendario', 'agenda');
+            </script>
+        </div>
 	</div><!-- content -->
 
 </div>

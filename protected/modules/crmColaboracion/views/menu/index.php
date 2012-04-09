@@ -10,11 +10,12 @@ $this->breadcrumbs=array(
             <td>
                 <select id="optColaboracion" onchange="
                         switch(this.value){
-                            case 1:
-                                alert ('ok');
+                            case '1':
+                                sendPage('null', '<?php echo Yii::app()->request->baseUrl;?>/index.php/crmColaboracion/llamada/create', 'colaboracion');
                                 break;
                         }
                                             ">
+                    <option value="0">Seleccione..</option>
                     <option value="1">Llanadas</option>
                     <option value="2">Reuniones</option>
                 </select>

@@ -21,11 +21,11 @@
 		<?php echo $form->error($model,'fecha_ingreso'); ?>
 	</div>
 
-	<div class="row">
+<!--	<div class="row">
 		<?php echo $form->labelEx($model,'fecha_modificacion'); ?>
 		<?php echo $form->textField($model,'fecha_modificacion'); ?>
 		<?php echo $form->error($model,'fecha_modificacion'); ?>
-	</div>
+	</div>-->
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'descripcion'); ?>
@@ -45,11 +45,11 @@
 		<?php echo $form->error($model,'fecha_fin'); ?>
 	</div>
 
-	<div class="row">
+<!--	<div class="row">
 		<?php echo $form->labelEx($model,'fecha_fin_real'); ?>
 		<?php echo $form->textField($model,'fecha_fin_real'); ?>
 		<?php echo $form->error($model,'fecha_fin_real'); ?>
-	</div>
+	</div>-->
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'estado_llamada'); ?>
@@ -69,23 +69,23 @@
 		<?php echo $form->error($model,'tiempo_recordatorio'); ?>
 	</div>
 
-	<div class="row">
+<!--	<div class="row">
 		<?php echo $form->labelEx($model,'padre_tipo'); ?>
 		<?php echo $form->textField($model,'padre_tipo',array('size'=>60,'maxlength'=>255)); ?>
 		<?php echo $form->error($model,'padre_tipo'); ?>
-	</div>
+	</div>-->
 
-	<div class="row">
+<!--	<div class="row">
 		<?php echo $form->labelEx($model,'estado_sistema'); ?>
 		<?php echo $form->checkBox($model,'estado_sistema'); ?>
 		<?php echo $form->error($model,'estado_sistema'); ?>
-	</div>
+	</div>-->
 
-	<div class="row">
+<!--	<div class="row">
 		<?php echo $form->labelEx($model,'padre_id'); ?>
 		<?php echo $form->textField($model,'padre_id'); ?>
 		<?php echo $form->error($model,'padre_id'); ?>
-	</div>
+	</div>-->
 
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
