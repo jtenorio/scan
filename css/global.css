@@ -1,10 +1,10 @@
 body{
-	background:#DFE2EE;	
+	background:#DFE2EE;
 	font-family:Arial, Helvetica, sans-serif;
 }
 .wrapper{
 	width:1099px;
-	margin:0 auto;	
+	margin:0 auto;
 }
 
 h4.scan{
@@ -21,12 +21,12 @@ h1{
     font-size: 22px;
     text-align: center;
     color: #366C36;
-    font-weight: bold;        
+    font-weight: bold;
 }
 
 p.copyright{
 	color:#6C676E;
-	margin:5px 0;	
+	margin:5px 0;
 }
 /*Fin LogIn*/
 #header h1 a{
@@ -51,7 +51,7 @@ p.copyright{
 }
 #buttons ul{
 	margin:0px;
-	padding:0px;	
+	padding:0px;
 }
 #buttons ul li{
 	list-style:none;
@@ -61,7 +61,7 @@ p.copyright{
 	background:url(../images/bgButtons.jpg) no-repeat;
 	margin-left:5px;
 	margin-top:2px;
-	padding:24px 13px 0px 13px;	
+	padding:24px 13px 0px 13px;
 }
 #buttons ul li a{
 	background:url(../images/libro.jpg) top center no-repeat;
@@ -80,10 +80,10 @@ p.copyright{
 }
 	#listBancos h2{
 		background:url(../images/casita.png) no-repeat;
-		float:left;		
+		float:left;
 		height:51px;
                 font-size: 28px;
-                font-weight: bold;                
+                font-weight: bold;
 		/*padding-top:51px;*/
 		overflow:hidden;
 		margin:8px 0 0 10px;
@@ -92,7 +92,7 @@ p.copyright{
 	#listBancos ul{
 		float:right;
 		margin:0px;
-		padding:4px;	
+		padding:4px;
 	}
 		#listBancos ul li{
 			float:left;
@@ -135,7 +135,7 @@ p.copyright{
 
 
 #busqueda.closed{
-	background:url(../images/bgBuscador.png) top right no-repeat;	
+	background:url(../images/bgBuscador.png) top right no-repeat;
 	width:244px;
 	height:336px;
 	position:absolute;
@@ -143,7 +143,7 @@ p.copyright{
 	left:-190px;
 }
 #busqueda.open{
-	background:url(../images/bgBuscador.png) top right no-repeat;	
+	background:url(../images/bgBuscador.png) top right no-repeat;
 	width:244px;
 	height:336px;
 	position:absolute;
@@ -155,22 +155,22 @@ p.copyright{
 	}
 		#busqueda table td{
 			color:#FFF;
-			padding:9px 5px;	
+			padding:9px 5px;
 		}
 		#busqueda table input{
-			padding:3px;	
+			padding:3px;
 			color:#444;
 			font-size:11px;
 			width:100px;
 			border:none;
 		}
 		#busqueda table input#desde, #busqueda table input#hasta{
-			width:80px;	
+			width:80px;
 			background:#FFF url(../images/callImg.jpg) top right no-repeat;
 			cursor:pointer;
 		}
 		#busqueda table input#buscar{
-			width:92px;	
+			width:92px;
 			height:30px;
 			background:url(../images/buscar.png)no-repeat;
 			cursor:pointer;
@@ -184,14 +184,14 @@ p.copyright{
 			display:block;
 			position:absolute;
 			right:5px;
-			top:150px;	
+			top:150px;
 		}
 	#busqueda #close{
-		display:none;	
+		display:none;
 	}
 .tabs{
 	float:left;
-	width:570px;	
+	width:570px;
 }
 ul.tabNavigation {
 	list-style: none;
@@ -232,18 +232,18 @@ div.tabs div {
 				clear:both;
 }
 div.tabs div div.sup {
-	background: url(../images/bgContentTabUp.png) no-repeat;	
+	background: url(../images/bgContentTabUp.png) no-repeat;
 	width:548px;
 	height:15px;
 }
 div.tabs div div.content {
-	background: url(../images/bgContentTab.png) repeat-y;	
+	background: url(../images/bgContentTab.png) repeat-y;
 	width:528px;
 	padding:10px;
 	overflow:hidden;
 }
 div.tabs div div.bottom {
-	background: url(../images/bgContentTabBottom.png) no-repeat;	
+	background: url(../images/bgContentTabBottom.png) no-repeat;
 	width:548px;
 	height:18px;
 }
@@ -256,7 +256,7 @@ div.tabs > div h2 {
 }
 #footer{
 	clear:both;
-	text-align:center;	
+	text-align:center;
 }
 /*Decoradores*/
 
@@ -270,7 +270,7 @@ div.tabs > div h2 {
 .comandos ul{
 		float:right;
 		margin:0px;
-		padding:4px;	
+		padding:4px;
 	}
 		.comandos ul li{
 			float:left;
@@ -293,7 +293,20 @@ div.tabs > div h2 {
                                 background:url(../images/nuevo.jpg) top center no-repeat;
 
                         }
- /*Estilo general todos los a*/                      
+ /*Estilo general todos los a*/
 a{
-    
+
+}
+
+/*Estilos modulo plantilla colaborativa*/
+#content #izquierda{
+    width: 380px;
+    float: left;
+    border: red 1px solid;
+}
+
+#content #agenda{
+    width: 710px;
+    float: right;
+    border: red 1px solid;
 }

@@ -11,7 +11,7 @@ return array(
                            array('label'=>'Plan Centro de Costo', 'url'=>'parametros/plancentrocosto/index'),// dbeeria estar adentro
                             array('label'=>'Banco', 'url'=>'parametros/banco/index'),
                             array('label'=>'Cuentas Bancarias', 'url'=>'parametros/cuentabancaria/index'),
-                            
+
                          //// deberia estar en casa
 
                      )),
@@ -29,7 +29,7 @@ return array(
                          array('label'=>'Tip. A. Retencion', 'url'=>'parametros/tipoagenteretencion/index'),
                          array('label'=>'Tipo Proveedor', 'url'=>'parametros/tipoproveedor/index'),
                          array('label'=>'Tarjeta Credito', 'url'=>'parametros/tarjetacredito/index'),
-                         
+
 
                      )),  array('label'=>'Inventario','url'=>'#','access'=>'admin',
                      'items'=>array(
@@ -43,7 +43,7 @@ return array(
                            array('label'=>'Items Inventario', 'url'=>'parametros/item/iteminventario/index'),
                            array('label'=>'Items Activo Fijo', 'url'=>'parametros/item/index'),
                      )),
-                
+
                  array('label'=>'Generales y Usuarios','url'=>'#','access'=>'admin',
                      'items'=>array(
                            array('label'=>'Empresa', 'url'=>'parametros/empresa/index'),
@@ -55,7 +55,7 @@ return array(
                            array('label'=>'Catalogos', 'url'=>'parametros/catalogos/index'),
 
                      )),
-               
+
 	)),
 //        array('label'=>'Parametrizacion Sistema', 'url'=>'#', 'access'=>'admin',
 //		'items'=>array(
@@ -72,7 +72,7 @@ return array(
 //                array('label'=>'Observados', 'url'=>'observado/index'),
 //                array('label'=>'Recurrente', 'url'=>'recurrente/index'),
 //	)),
-	
+
     array('label'=>'Contabilidad', 'url'=>'#',
 		'items'=>array(
 		array('label'=>'Maestro Asiento', 'url'=>'contabilidad/maestroasiento/admin', 'access'=>'@'),
@@ -93,7 +93,7 @@ return array(
 		//array('label'=>'Información sistema', 'url'=>'herramientas/info_sistema', 'access'=>'admin'),
                 //array('label'=>'Enviar Mail', 'url'=>'herramientas/enviarMail', 'access'=>'admin'),
 	)),
-    
+
     array('label'=>'Compras','url'=>'#',
                      'items'=>array(
                             array('label'=>'Orden Compra','url'=>'#',
@@ -105,8 +105,17 @@ return array(
                             array('label'=>'Anular Retencion', 'url'=>'compra/compra/buscaranularetencion'),
                             array('label'=>'Compras Anteriores', 'url'=>'compra/compra/buscarcomprasanteriores'),
                             array('label'=>'Devolucion Compras', 'url'=>'compra/compra/buscardevolucioncompra'),
-                     )),  
-    
+                     )),
+    array('label'=>'CRM', 'url'=>'#',
+		'items'=>array(
+		array('label'=>'Colaboracion', 'url'=>'crmColaboracion', 'access'=>'@'),
+
+		//array('label'=>'Tabla amortización', 'url'=>'herramientas/tabla', 'access'=>'@'),
+		//array('label'=>'Tramas banco', 'url'=>'herramientas/tramaBanco', 'access'=>'supervisor,admin'),
+		//array('label'=>'Información sistema', 'url'=>'herramientas/info_sistema', 'access'=>'admin'),
+                //array('label'=>'Enviar Mail', 'url'=>'herramientas/enviarMail', 'access'=>'admin'),
+	)),
+
 );
 
 /*
