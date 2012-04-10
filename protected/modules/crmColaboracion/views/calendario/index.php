@@ -5,18 +5,18 @@
         <td>Mes:</td>
         <td>
             <select name="mes" id="mes">
-                <option value="1">Enero</option>
-                <option value="2">Febrero</option>
-                <option value="3">Marzo</option>
-                <option value="4">Abril</option>
-                <option value="5">Mayo</option>
-                <option value="6">Junio</option>
-                <option value="7">Julio</option>
-                <option value="8">Agosto</option>
-                <option value="9">Septiembre</option>
-                <option value="10">Octubre</option>
-                <option value="11">Noviembre</option>
-                <option value="12">Diciembre</option>                
+                <option value="1" <?php echo $mes==1?'selected':''?>>Enero</option>
+                <option value="2" <?php echo $mes==2?'selected':''?>>Febrero</option>
+                <option value="3" <?php echo $mes==3?'selected':''?>>Marzo</option>
+                <option value="4" <?php echo $mes==4?'selected':''?>>Abril</option>
+                <option value="5" <?php echo $mes==5?'selected':''?>>Mayo</option>
+                <option value="6" <?php echo $mes==6?'selected':''?>>Junio</option>
+                <option value="7" <?php echo $mes==7?'selected':''?>>Julio</option>
+                <option value="8" <?php echo $mes==8?'selected':''?>>Agosto</option>
+                <option value="9" <?php echo $mes==9?'selected':''?>>Septiembre</option>
+                <option value="10" <?php echo $mes==10?'selected':''?>>Octubre</option>
+                <option value="11" <?php echo $mes==11?'selected':''?>>Noviembre</option>
+                <option value="12" <?php echo $mes==12?'selected':''?>>Diciembre</option>                
             </select>
             
             
@@ -28,12 +28,20 @@
             <select name="anio" id="anio">
                 <?php
                                       
-                    for( $anio = date('Y') -2;$anio<=date('Y')+2;$anio++)
+                    for( $anioi = date('Y') -2;$anioi<=date('Y')+2;$anioi++)
                     {
-                        echo '<option value="'.$anio.'">'.$anio.'</option>';
+                        $selected = $anioi==$anio?'selected':'';
+                        echo '<option value="'.$anioi.'" '.$selected.'>'.$anioi.'</option>';
                     }
                 ?>
             </select>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2" align="center">
+            <input type="button" value="Ver" name="view" onclick="
+                sendPage('parametros', '<?php echo Yii::app()->request->baseUrl;?>/index.php/crmColaboracion/calendario', 'agenda');
+           "/>
         </td>
     </tr>
 </table>
@@ -45,9 +53,9 @@
 
  $date= time();
 
- $day = date('d',$date);
- $month = date('m',$date);
- $year = date('Y',$date);
+ //$day = date('d',$date);
+ $month = $mes;
+ $year = $anio;
 
  $firstDay = mktime(0,0,0,$month,1,$year);
 
@@ -67,7 +75,7 @@
 
 $daysInMonth = cal_days_in_month(0, $month, $year);
 
- echo '<table border=1 width="100%">';
+ echo '<table width="100%" class="calendario">';
 
  echo "<tr><th colspan=7> $title $year </th></tr>";
 
@@ -94,8 +102,8 @@ $daysInMonth = cal_days_in_month(0, $month, $year);
  while ( $day_num <= $daysInMonth )
  {
     //aqui se deben imprimir los eventos para el dia/mes/anio
-
-    echo "<td> $day_num </td>";
+    $class = ($day_num == date('d'))?'hoy':''; 
+    echo '<td class="'.$class.'">'. $day_num .'</td>';
     $day_num++;
     $day_count++;
 

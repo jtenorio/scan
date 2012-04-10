@@ -4,7 +4,14 @@ class CalendarioController extends Controller
 {
 	public function actionIndex()
 	{
-		$this->renderPartial('index');
+            
+                $mes = isset($_REQUEST['mes'])?$_REQUEST['mes']:date('m');
+                $anio = isset($_REQUEST['anio'])?$_REQUEST['anio']:date('Y');
+            
+		$this->renderPartial('index',array(
+                    'mes'=>$mes,
+                    'anio'=>$anio,
+                ));
 	}
 
 	// Uncomment the following methods and override them if needed

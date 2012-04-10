@@ -302,11 +302,29 @@ a{
 #content #izquierda{
     width: 380px;
     float: left;
-    border: red 1px solid;
 }
 
 #content #agenda{
     width: 710px;
-    float: right;
-    border: red 1px solid;
+    float: right; 
+}
+
+/*Estilos del calendario*/
+.calendario{
+    
+    
+}
+
+.calendario tr td{
+    border: blue 2px solid;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.calendario tr td:hover{
+    background-color: greenyellow;
+}
+
+.calendario tr td.hoy{
+    background-color: #FBC2C4;
 }
