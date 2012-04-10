@@ -1,3 +1,4 @@
+
 <script>
     $(function(){
           $('#llamada-form').ajaxForm(function(result) {
@@ -19,7 +20,7 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'asunto'); ?>
-		<?php echo $form->textField($model,'asunto',array('size'=>60,'maxlength'=>255)); ?>
+		<?php echo $form->textField($model,'asunto',array('size'=>40,'maxlength'=>255)); ?>
 		<?php echo $form->error($model,'asunto'); ?>
 	</div>
 
@@ -37,7 +38,7 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'descripcion'); ?>
-		<?php echo $form->textArea($model,'descripcion',array('rows'=>6, 'cols'=>50)); ?>
+		<?php echo $form->textArea($model,'descripcion',array('rows'=>6, 'cols'=>35)); ?>
 		<?php echo $form->error($model,'descripcion'); ?>
 	</div>
 
@@ -48,20 +49,10 @@
                     $this->widget('zii.widgets.jui.CJuiDatePicker', array(
                                     'name'=>'Llamada[fecha_incio]',
                                     'value'=>$valorFecha,
+                                    'flat' => true,
 
-                                    // additional javascript options for the date picker plugin
-                                    'options'=>array(
-                                        'showAnim'=>'fold',
-                                        'dateFormat'=> 'yy-mm-dd',
-                                        'changeMonth'=> true,
-                                        'changeYear'=> true,
-                                        'showButtonPanel'=> true,
-                                    ),
-                                    'htmlOptions'=>array(
-                                        'style'=>'height:20px;',
-                                        'readonly'=>'readonly',
-                                    ),
                                 ));
+
                 ?>
 
 		<?php echo $form->error($model,'fecha_incio'); ?>
