@@ -13,11 +13,23 @@ $this->breadcrumbs=array(
                             case '1':
                                 sendPage('null', '<?php echo Yii::app()->request->baseUrl;?>/index.php/crmColaboracion/llamada/create', 'colaboracion');
                                 break;
+                            case '2':
+                                sendPage('null', '<?php echo Yii::app()->request->baseUrl;?>/index.php/crmColaboracion/reunion/create', 'colaboracion');
+                                break;
+                            case '3':
+                                sendPage('null', '<?php echo Yii::app()->request->baseUrl;?>/index.php/crmColaboracion/tarea/create', 'colaboracion');
+                                break;
+                            case '4':
+                                sendPage('null', '<?php echo Yii::app()->request->baseUrl;?>/index.php/crmColaboracion/documento/create', 'colaboracion');
+                                break;    
                         }
                                             ">
                     <option value="0">Seleccione..</option>
                     <option value="1">Llanadas</option>
                     <option value="2">Reuniones</option>
+                    <option value="3">Tareas</option>
+                    <option value="4">Documentos</option>
+                    
                 </select>
             </td>
         </tr>
