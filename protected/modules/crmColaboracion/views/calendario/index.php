@@ -16,10 +16,10 @@
                 <option value="9" <?php echo $mes==9?'selected':''?>>Septiembre</option>
                 <option value="10" <?php echo $mes==10?'selected':''?>>Octubre</option>
                 <option value="11" <?php echo $mes==11?'selected':''?>>Noviembre</option>
-                <option value="12" <?php echo $mes==12?'selected':''?>>Diciembre</option>                
+                <option value="12" <?php echo $mes==12?'selected':''?>>Diciembre</option>
             </select>
-            
-            
+
+
         </td>
     </tr>
     <tr>
@@ -27,7 +27,7 @@
         <td>
             <select name="anio" id="anio">
                 <?php
-                                      
+
                     for( $anioi = date('Y') -2;$anioi<=date('Y')+2;$anioi++)
                     {
                         $selected = $anioi==$anio?'selected':'';
@@ -102,8 +102,19 @@ $daysInMonth = cal_days_in_month(0, $month, $year);
  while ( $day_num <= $daysInMonth )
  {
     //aqui se deben imprimir los eventos para el dia/mes/anio
-    $class = ($day_num == date('d'))?'hoy':''; 
-    echo '<td class="'.$class.'">'. $day_num .'</td>';
+    $class = ($day_num == date('d'))?'hoy':'';
+    echo '<td class="'.$class.'">'. $day_num;
+        //imprimir las llamadas
+
+    if(!is_null($eventos['llamadas'][$day_num]))
+    {
+        foreach($eventos['llamadas'][$day_num] as $row)
+        {
+          
+           echo '<p>'.$row->asunto.'</p>';
+        }
+    }
+    echo '</td>';
     $day_num++;
     $day_count++;
 

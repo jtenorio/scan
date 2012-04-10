@@ -1,4 +1,12 @@
-<div class="form">
+<script>
+    $(function(){
+          $('#llamada-form').ajaxForm(function(result) {
+              $('#formulario').html(result);
+            });
+    });
+</script>
+
+<div class="form" id="formulario">
 
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'llamada-form',
@@ -40,22 +48,22 @@
                     $this->widget('zii.widgets.jui.CJuiDatePicker', array(
                                     'name'=>'Llamada[fecha_incio]',
                                     'value'=>$valorFecha,
-                                    
+
                                     // additional javascript options for the date picker plugin
                                     'options'=>array(
                                         'showAnim'=>'fold',
                                         'dateFormat'=> 'yy-mm-dd',
                                         'changeMonth'=> true,
-                                        'changeYear'=> true,            
+                                        'changeYear'=> true,
                                         'showButtonPanel'=> true,
                                     ),
                                     'htmlOptions'=>array(
                                         'style'=>'height:20px;',
                                         'readonly'=>'readonly',
                                     ),
-                                ));                
+                                ));
                 ?>
-               
+
 		<?php echo $form->error($model,'fecha_incio'); ?>
 	</div>
 
@@ -73,7 +81,16 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'estado_llamada'); ?>
-		<?php echo $form->textField($model,'estado_llamada',array('size'=>36,'maxlength'=>36)); ?>
+
+        <?php
+            echo $form->dropDownList($model,'estado_llamada',array(
+                0=>'Pendiente',
+                1=>'En ejecucion',
+                2=>'Finalizada',
+                3=>'Cancelada'
+                ),array());
+
+        ?>
 		<?php echo $form->error($model,'estado_llamada'); ?>
 	</div>
 
@@ -85,7 +102,15 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'tiempo_recordatorio'); ?>
-		<?php echo $form->textField($model,'tiempo_recordatorio'); ?>
+		<?php
+            echo $form->dropDownList($model,'tiempo_recordatorio',array(
+                0=>'No alertar',
+                1=>'1 Dia',
+                2=>'2 Dias',
+                3=>'3 Dias'
+                ),array());
+
+        ?>
 		<?php echo $form->error($model,'tiempo_recordatorio'); ?>
 	</div>
 

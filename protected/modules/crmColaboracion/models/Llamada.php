@@ -121,4 +121,15 @@ class Llamada extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
+
+    public static function getAllLlamadas($fecha)
+    {
+            $criteria=new CDbCriteria;
+            $criteria->addCondition("fecha_incio <= '$fecha'");
+            $criteria->addCondition("fecha_fin >= '$fecha'");
+
+            return new CActiveDataProvider(Llamada::model(), array(
+			'criteria'=>$criteria,
+		));
+    }
 }

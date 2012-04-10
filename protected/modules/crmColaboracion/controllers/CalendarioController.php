@@ -4,15 +4,37 @@ class CalendarioController extends Controller
 {
 	public function actionIndex()
 	{
-            
-                $mes = isset($_REQUEST['mes'])?$_REQUEST['mes']:date('m');
-                $anio = isset($_REQUEST['anio'])?$_REQUEST['anio']:date('Y');
-            
+
+        $mes = isset($_REQUEST['mes'])?$_REQUEST['mes']:date('m');
+        $anio = isset($_REQUEST['anio'])?$_REQUEST['anio']:date('Y');
+
+
+        //obtener los eventos del mes
+
+        $diasMes = cal_days_in_month(0, $mes, $anio);
+        $eventos = array();
+
+        for($dia = 1;$dia <= $diasMes;$dia++)
+        {
+            //formato fecha universal Ymd
+            $fechaGet = "$anio-$mes-$dia";
+            $llamadas = $this->getAllLlamadas($fechaGet);
+            $eventos['llamadas'][$dia] = $llamadas->getData();
+        }
+
 		$this->renderPartial('index',array(
                     'mes'=>$mes,
                     'anio'=>$anio,
+                    'eventos'=>$eventos,
                 ));
 	}
+
+
+    private function getAllLlamadas($fecha)
+    {
+        $llamadas = Llamada::model()->getAllLlamadas($fecha);
+        return $llamadas;
+    }
 
 	// Uncomment the following methods and override them if needed
 	/*
