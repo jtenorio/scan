@@ -50,7 +50,6 @@
                                     'name'=>'Llamada[fecha_incio]',
                                     'value'=>$valorFecha,
                                     'flat' => true,
-
                                 ));
 
                 ?>
@@ -105,23 +104,6 @@
 		<?php echo $form->error($model,'tiempo_recordatorio'); ?>
 	</div>
 
-<!--	<div class="row">
-		<?php echo $form->labelEx($model,'padre_tipo'); ?>
-		<?php echo $form->textField($model,'padre_tipo',array('size'=>60,'maxlength'=>255)); ?>
-		<?php echo $form->error($model,'padre_tipo'); ?>
-	</div>-->
-
-<!--	<div class="row">
-		<?php echo $form->labelEx($model,'estado_sistema'); ?>
-		<?php echo $form->checkBox($model,'estado_sistema'); ?>
-		<?php echo $form->error($model,'estado_sistema'); ?>
-	</div>-->
-
-<!--	<div class="row">
-		<?php echo $form->labelEx($model,'padre_id'); ?>
-		<?php echo $form->textField($model,'padre_id'); ?>
-		<?php echo $form->error($model,'padre_id'); ?>
-	</div>-->
 
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>

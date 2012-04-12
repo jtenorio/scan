@@ -76,7 +76,7 @@ return array(
     array('label'=>'Contabilidad', 'url'=>'#',
 		'items'=>array(
 		array('label'=>'Maestro Asiento', 'url'=>'contabilidad/maestroasiento/admin', 'access'=>'@'),
-                array('label'=>'Cheques Varios', 'url'=>'contabilidad/maestroCheques/admin', 'access'=>'@'),
+                array('label'=>'Cheques Varios', 'url'=>'contabilidad/maestrocheques/admin', 'access'=>'@'),
                 array('label'=>'Ant Prov sin Fact', 'url'=>'contabilidad/maestroanticipoproveedor/admin', 'access'=>'@'),
                 array('label'=>'Pagos a Proveedor ', 'url'=>'contabilidad/maestrochequeproveedor/admin', 'access'=>'@'),
                 array('label'=>'Reposicion Caja Chica ', 'url'=>'contabilidad/maestrocajachica/admin', 'access'=>'@'),
