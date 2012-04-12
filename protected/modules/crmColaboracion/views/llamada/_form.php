@@ -1,3 +1,7 @@
+<script type="text/javascript" language="javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery-1.7.1.js"></script>
+<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.ui.core.js"></script>
+<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.ui.widget.js"></script>
+<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.ui.datepicker.js"></script>
 
 <script>
     $(function(){
@@ -5,7 +9,13 @@
               $('#formulario').html(result);
             });
     });
-</script>
+
+	$(function() {
+		$( "#Llamada_fecha_incio" ).datepicker();
+        $( "#format" ).change(function() {
+			$( "#Llamada_fecha_incio" ).datepicker( "option", "dateFormat", $( this ).val() );
+	});
+	</script>
 
 <div class="form" id="formulario">
 
@@ -43,19 +53,11 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'fecha_incio'); ?>
-		<?php
-                    $valorFecha = strlen($model->fecha_incio)>1?$model->fecha_incio:date('Y-m-d');
-                    $this->widget('zii.widgets.jui.CJuiDatePicker', array(
-                                    'name'=>'Llamada[fecha_incio]',
-                                    'value'=>$valorFecha,
-                                    'flat' => true,
-                                ));
-
-                ?>
-
-		<?php echo $form->error($model,'fecha_incio'); ?>
-	</div>
+        <?php echo $form->labelEx($model,'fecha_incio'); ?>
+        <?php echo $form->textField($model,'fecha_incio'); ?>
+        <?php echo $form->error($model,'fecha_incio'); ?>
+<!--		<p>Date: <input type="text" id="datepicker" name="Llamada[fecha_incio]" ></p>
+-->	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'fecha_fin'); ?>
