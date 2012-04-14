@@ -2,6 +2,7 @@
 <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.ui.core.js"></script>
 <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.ui.widget.js"></script>
 <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.ui.datepicker.js"></script>
+<link href="<?php echo Yii::app()->request->baseUrl; ?>/css/jquery.ui.datepicker.css" rel="stylesheet" type="text/css" />
 
 <script>
     $(function(){
@@ -11,9 +12,8 @@
     });
 
 	$(function() {
-		$( "#Llamada_fecha_incio" ).datepicker();
-        $( "#format" ).change(function() {
-			$( "#Llamada_fecha_incio" ).datepicker( "option", "dateFormat", $( this ).val() );
+		$( "#Llamada_fecha_incio" ).datepicker({ dateFormat: 'yy-mm-dd' });
+
 	});
 	</script>
 
