@@ -8,12 +8,7 @@
 	<p class="note">Fields with <span class="required">*</span> are required.</p>
 
 	<?php echo $form->errorSummary($model); ?>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'id'); ?>
-		<?php echo $form->textField($model,'id'); ?>
-		<?php echo $form->error($model,'id'); ?>
-	</div>
+	
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'nombres'); ?>
@@ -25,18 +20,6 @@
 		<?php echo $form->labelEx($model,'apellidos'); ?>
 		<?php echo $form->textField($model,'apellidos',array('size'=>60,'maxlength'=>250)); ?>
 		<?php echo $form->error($model,'apellidos'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'fecha_ingreso'); ?>
-		<?php echo $form->textField($model,'fecha_ingreso'); ?>
-		<?php echo $form->error($model,'fecha_ingreso'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'fecha_modificacion'); ?>
-		<?php echo $form->textField($model,'fecha_modificacion'); ?>
-		<?php echo $form->error($model,'fecha_modificacion'); ?>
 	</div>
 
 	<div class="row">
@@ -59,15 +42,28 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'fecha_cumpleanos'); ?>
-		<?php echo $form->textField($model,'fecha_cumpleanos'); ?>
+		<?php 
+                $valorFacha = strlen($model->fecha_cumpleanos)>1?$model->fecha_cumpleanos:date('Y-m-d');
+                $this->widget('zii.widgets.jui.CJuiDatePicker', array(
+                                    'name'=>'Contacto[fecha_cumpleanos]',
+                                    'value'=>$valorFacha,
+                                    
+                                    // additional javascript options for the date picker plugin
+                                    'options'=>array(
+                                        'showAnim'=>'fold',
+                                        'dateFormat'=> 'yy-mm-dd',
+                                        'changeMonth'=> true,
+                                        'changeYear'=> true,            
+                                        'showButtonPanel'=> true,
+                                    ),
+                                    'htmlOptions'=>array(
+                                        'style'=>'height:20px;',
+                                        'readonly'=>'readonly',
+                                    ),
+                                ));  ?>
 		<?php echo $form->error($model,'fecha_cumpleanos'); ?>
 	</div>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'estado_sistema'); ?>
-		<?php echo $form->checkBox($model,'estado_sistema'); ?>
-		<?php echo $form->error($model,'estado_sistema'); ?>
-	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'tipodocumento'); ?>
