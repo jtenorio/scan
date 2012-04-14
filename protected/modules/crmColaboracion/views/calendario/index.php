@@ -111,7 +111,7 @@ $daysInMonth = cal_days_in_month(0, $month, $year);
         foreach($eventos['llamadas'][$day_num] as $row)
         {
           
-           echo '<p>'.$row->asunto.'</p>';
+           echo '<p><a onclick="sendPage(\'null\', \''.Yii::app()->request->baseUrl.'/index.php/crmColaboracion/llamada/view/id/'.$row->id.'\', \'colaboracion\');">'.$row->asunto.'</a></p>';
         }
     }
     echo '</td>';

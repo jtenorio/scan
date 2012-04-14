@@ -46,12 +46,24 @@
 		<?php echo $form->labelEx($model,'fecha_incio'); ?>
 		<?php
                     $valorFecha = strlen($model->fecha_incio)>1?$model->fecha_incio:date('Y-m-d');
-                    $this->widget('zii.widgets.jui.CJuiDatePicker', array(
+
+                     $this->widget('zii.widgets.jui.CJuiDatePicker', array(
                                     'name'=>'Llamada[fecha_incio]',
                                     'value'=>$valorFecha,
-                                    'flat' => true,
-                                ));
-
+                                    
+                                    // additional javascript options for the date picker plugin
+                                    'options'=>array(
+                                        'showAnim'=>'fold',
+                                        'dateFormat'=> 'yy-mm-dd',
+                                        'changeMonth'=> true,
+                                        'changeYear'=> true,            
+                                        'showButtonPanel'=> true,
+                                    ),
+                                    'htmlOptions'=>array(
+                                        'style'=>'height:20px;',
+                                        
+                                    ),
+                                ));   
                 ?>
 
 		<?php echo $form->error($model,'fecha_incio'); ?>
