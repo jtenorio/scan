@@ -54,6 +54,7 @@
 	</div>
 
 	<div class="row">
+
         <?php echo $form->labelEx($model,'fecha_incio'); ?>
         <?php
             $hoy = date("Y-m-d");
@@ -61,6 +62,7 @@
         <?php echo $form->error($model,'fecha_incio'); ?>
 <!--		<p>Date: <input type="text" id="datepicker" name="Llamada[fecha_incio]" ></p>
 -->	</div>
+
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'fecha_fin'); ?>
