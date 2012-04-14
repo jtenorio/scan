@@ -15,22 +15,11 @@ $this->menu=array(
 
 <h1>View Tarea #<?php echo $model->id; ?></h1>
 
-<?php $this->widget('zii.widgets.CDetailView', array(
-	'data'=>$model,
-	'attributes'=>array(
-		'id',
-		'nombre_tarea',
-		'fecha_ingreso',
-		'fecha_modificacion',
-		'descripcion',
-		'bandera_fecha_fin',
-		'fecha_fin',
-		'fecha_inicio',
-		'padre_tipo',
-		'estado_sistema',
-		'fecha_real_fin',
-		'padre_id',
-		'idusuario',
-		'idequipo',
-	),
-)); ?>
+<?php
+    $this->renderPartial('_view',array(
+			'data'=>$model,
+		));
+?>
+<script type="text/javascript">
+    sendPage('null', '<?php echo Yii::app()->request->baseUrl;?>/index.php/crmColaboracion/calendario', 'agenda');
+</script>
