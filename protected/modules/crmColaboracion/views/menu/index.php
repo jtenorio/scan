@@ -25,7 +25,7 @@ $this->breadcrumbs=array(
                         }
                                             ">
                     <option value="0">Seleccione..</option>
-                    <option value="1">Llanadas</option>
+                    <option value="1">Llamadas</option>
                     <option value="2">Reuniones</option>
                     <option value="3">Tareas</option>
                     <option value="4">Documentos</option>

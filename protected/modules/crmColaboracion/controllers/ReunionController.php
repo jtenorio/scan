@@ -50,7 +50,7 @@ class ReunionController extends Controller
 	 */
 	public function actionView($id)
 	{
-		$this->render('view',array(
+		$this->renderPartial('view',array(
 			'model'=>$this->loadModel($id),
 		));
 	}
@@ -69,6 +69,10 @@ class ReunionController extends Controller
 		if(isset($_POST['Reunion']))
 		{
 			$model->attributes=$_POST['Reunion'];
+            $model->fecha_ingreso = date('Ymd');
+            $model->fecha_modificacion = date('Ymd');
+            $model->estado_sistema = 0;
+            
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -88,16 +92,19 @@ class ReunionController extends Controller
 		$model=$this->loadModel($id);
 
 		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
+		$this->performAjaxValidation($model);
 
 		if(isset($_POST['Reunion']))
 		{
 			$model->attributes=$_POST['Reunion'];
+            $model->fecha_modificacion = date('Ymd');
+            $model->estado_sistema = 0;
+            
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
 
-		$this->render('update',array(
+		$this->renderPartial('update',array(
 			'model'=>$model,
 		));
 	}

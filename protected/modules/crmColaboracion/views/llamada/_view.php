@@ -67,10 +67,8 @@
 	<br />
     
     <p>
-        <a onclick = "sendPage('null', '<?php echo Yii::app()->request->baseUrl;?>/index.php/crmColaboracion/llamada/update/id/<?php echo $data->id?>', 'colaboracion');">Editar</a>
+        <a onclick ="sendPage('null', '<?php echo Yii::app()->request->baseUrl;?>/index.php/crmColaboracion/llamada/update/id/<?php echo $data->id?>', 'colaboracion');">Editar</a>
     </p>
-<!--    <b><?php echo CHtml::link( 'Editar', array('llamada/update','id'=>$data->id)); ?>
-        </br>-->
     
 	<?php /*
 	<b><?php echo CHtml::encode($data->getAttributeLabel('fecha_fin_real')); ?>:</b>
