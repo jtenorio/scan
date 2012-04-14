@@ -13,6 +13,7 @@
 
 	$(function() {
 		$( "#Llamada_fecha_incio" ).datepicker({ dateFormat: 'yy-mm-dd' });
+        $( "#Llamada_fecha_fin" ).datepicker({ dateFormat: 'yy-mm-dd' });
 
 	});
 	</script>
@@ -54,14 +55,18 @@
 
 	<div class="row">
         <?php echo $form->labelEx($model,'fecha_incio'); ?>
-        <?php echo $form->textField($model,'fecha_incio'); ?>
+        <?php
+            $hoy = date("Y-m-d");
+            echo $form->textField($model,'fecha_incio',array('value'=>$hoy,'readonly'=>'readonly')); ?>
         <?php echo $form->error($model,'fecha_incio'); ?>
 <!--		<p>Date: <input type="text" id="datepicker" name="Llamada[fecha_incio]" ></p>
 -->	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'fecha_fin'); ?>
-		<?php echo $form->textField($model,'fecha_fin'); ?>
+		<?php
+            $hoy = date("Y-m-d");
+            echo $form->textField($model,'fecha_fin',array('value'=>$hoy,'readonly'=>'readonly')); ?>
 		<?php echo $form->error($model,'fecha_fin'); ?>
 	</div>
 
