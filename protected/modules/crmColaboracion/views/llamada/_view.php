@@ -20,6 +20,58 @@
 	<?php echo CHtml::encode($data->fecha_fin); ?>
 	<br />
 
+    <b><?php echo CHtml::encode($data->getAttributeLabel('estado_llamada')); ?>:</b>
+	
+    <?php  
+        switch ($data->estado_llamada)
+            {
+                case 0:
+                    $estado='Pendiente';
+                    break;
+                case 1:
+                    $estado='En ejecucion';
+                    break;
+                case 2:
+                    $estado='Finalizada';
+                    break;
+                case 3:
+                    $estado='Cancelada';
+            }
+        echo CHtml::encode($estado);
+    
+    ?>
+	<br />
+    
+    <b><?php echo CHtml::encode($data->getAttributeLabel('direccion_llamada')); ?>:</b>
+	<?php echo CHtml::encode($data->direccion_llamada); ?>
+	<br />
+    
+    <b><?php echo CHtml::encode($data->getAttributeLabel('tiempo_recordatorio')); ?>:</b>
+	<?php
+        switch ($data->tiempo_recordatorio) {
+            case 0:
+                 $estado='No alertar';   
+                break;
+            case 1:
+                 $estado='1 Dia';
+                break;
+            case 2:
+                $estado='2 Dias';
+                break;
+            case 3:
+                $estado='3 Dias';
+                break;
+            
+        }
+        echo CHtml::encode($estado); ?>
+	<br />
+    
+    <p>
+        <a onclick = "sendPage('null', '<?php echo Yii::app()->request->baseUrl;?>/index.php/crmColaboracion/llamada/update/id/<?php echo $data->id?>', 'colaboracion');">Editar</a>
+    </p>
+<!--    <b><?php echo CHtml::link( 'Editar', array('llamada/update','id'=>$data->id)); ?>
+        </br>-->
+    
 	<?php /*
 	<b><?php echo CHtml::encode($data->getAttributeLabel('fecha_fin_real')); ?>:</b>
 	<?php echo CHtml::encode($data->fecha_fin_real); ?>
