@@ -92,16 +92,19 @@ class LlamadaController extends Controller
 		$model=$this->loadModel($id);
 
 		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
+		$this->performAjaxValidation($model);
 
 		if(isset($_POST['Llamada']))
 		{
 			$model->attributes=$_POST['Llamada'];
+            $model->fecha_modificacion = date('Ymd');
+            $model->estado_sistema = 0;
+            
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
 
-		$this->render('update',array(
+		$this->renderPartial('update',array(
 			'model'=>$model,
 		));
 	}
