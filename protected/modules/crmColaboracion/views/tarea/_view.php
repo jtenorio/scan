@@ -7,26 +7,34 @@
 	<b><?php echo CHtml::encode($data->getAttributeLabel('nombre_tarea')); ?>:</b>
 	<?php echo CHtml::encode($data->nombre_tarea); ?>
 	<br />
+    
+    <b><?php echo CHtml::encode($data->getAttributeLabel('fecha_inicio')); ?>:</b>
+	<?php echo CHtml::encode($data->fecha_inicio); ?>
+	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('fecha_ingreso')); ?>:</b>
+<!--	<b><?php echo CHtml::encode($data->getAttributeLabel('fecha_ingreso')); ?>:</b>
 	<?php echo CHtml::encode($data->fecha_ingreso); ?>
-	<br />
+	<br />-->
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('fecha_modificacion')); ?>:</b>
+<!--	<b><?php echo CHtml::encode($data->getAttributeLabel('fecha_modificacion')); ?>:</b>
 	<?php echo CHtml::encode($data->fecha_modificacion); ?>
-	<br />
+	<br />-->
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('descripcion')); ?>:</b>
 	<?php echo CHtml::encode($data->descripcion); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('bandera_fecha_fin')); ?>:</b>
+<!--	<b><?php echo CHtml::encode($data->getAttributeLabel('bandera_fecha_fin')); ?>:</b>
 	<?php echo CHtml::encode($data->bandera_fecha_fin); ?>
-	<br />
+	<br />-->
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('fecha_fin')); ?>:</b>
 	<?php echo CHtml::encode($data->fecha_fin); ?>
 	<br />
+    
+    <p>
+        <a onclick ="sendPage('null', '<?php echo Yii::app()->request->baseUrl;?>/index.php/crmColaboracion/tarea/update/id/<?php echo $data->id?>', 'colaboracion');">Editar</a>
+    </p>
 
 	<?php /*
 	<b><?php echo CHtml::encode($data->getAttributeLabel('fecha_inicio')); ?>:</b>

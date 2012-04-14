@@ -67,7 +67,7 @@
 	<div class="row">
 		<?php echo $form->labelEx($model,'fecha_fin'); ?>
 		<?php
-//            echo $form->textField($model,'fecha_fin',array('value'=>$hoy,'readonly'=>'readonly')); ?>
+           echo $form->textField($model,'fecha_fin',array('value'=>$hoy,'readonly'=>'readonly')); ?>
 		<?php echo $form->error($model,'fecha_fin'); ?>
 	</div>
 
