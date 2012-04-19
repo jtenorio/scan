@@ -32,3 +32,6 @@ $this->menu=array(
 		'idequipo',
 	),
 )); ?>
+<script type="text/javascript">
+    sendPage('null', '<?php echo Yii::app()->request->baseUrl;?>/index.php/crmColaboracion/documento/admin', 'agenda');
+</script>

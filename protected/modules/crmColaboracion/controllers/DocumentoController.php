@@ -50,7 +50,7 @@ class DocumentoController extends Controller
 	 */
 	public function actionView($id)
 	{
-		$this->render('view',array(
+		$this->renderPartial('view',array(
 			'model'=>$this->loadModel($id),
 		));
 	}
@@ -69,6 +69,8 @@ class DocumentoController extends Controller
 		if(isset($_POST['Documento']))
 		{
 			$model->attributes=$_POST['Documento'];
+            $model->fechaingreso = date('Ymd');
+            $model->fechamodificacion = date('Ymd');
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -143,7 +145,7 @@ class DocumentoController extends Controller
 		if(isset($_GET['Documento']))
 			$model->attributes=$_GET['Documento'];
 
-		$this->render('admin',array(
+		$this->renderPartial('admin',array(
 			'model'=>$model,
 		));
 	}

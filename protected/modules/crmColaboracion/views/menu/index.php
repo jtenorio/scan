@@ -21,6 +21,7 @@ $this->breadcrumbs=array(
                                 break;
                             case '4':
                                 sendPage('null', '<?php echo Yii::app()->request->baseUrl;?>/index.php/crmColaboracion/documento/create', 'colaboracion');
+                                sendPage('null', '<?php echo Yii::app()->request->baseUrl;?>/index.php/crmColaboracion/documento/admin', 'agenda');
                                 break;    
                         }
                                             ">
