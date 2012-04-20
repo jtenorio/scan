@@ -76,8 +76,20 @@ class ClienteController extends Controller
 				$this->redirect(array('view','id'=>$model->id));
 		}
 
+
+        //Obtener los documentos de indentificacion
+        $documentos = array();
+
+        foreach(TipoIdentificacion::getAllIdentificacion() as $row)
+        {
+            $documentos[$row->id] = $row->nombre;
+        }
+
+
 		$this->render('create',array(
 			'model'=>$model,
+            'documentos'=>$documentos,
+            
 		));
 	}
 
