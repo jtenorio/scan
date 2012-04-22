@@ -20,7 +20,7 @@
 	<?php echo $form->errorSummary($model); ?>
         <br>
 
-	
+
 		<?php echo $form->labelEx($model,'cuentacontable'); ?>
 		<?php echo $form->textField($model,'cuentacontable',array('size'=>40,'maxlength'=>40)); ?>
 		<?php echo $form->error($model,'cuentacontable'); ?>
@@ -32,7 +32,7 @@
                 ?>
                 <br>
 
-	
+
 		<?php echo $form->labelEx($model,'nombrecuenta'); ?>
 		<?php echo $form->textField($model,'nombrecuenta',array('size'=>60,'maxlength'=>120)); ?>
 		<?php echo $form->error($model,'nombrecuenta'); ?>
@@ -64,14 +64,14 @@
                 ?>
                 <br>
 
-	
+
 		<?php echo $form->labelEx($model,'idcuentaniff'); ?>
-		
+
         <?php
 
                 echo CHtml::textField('nombrecuentaniff', Plancuentasniff::model()->buscaNombre($model->idcuentaniff), array('readonly'=>true,'size'=>'35'));
                 echo CHtml::link('Escoger la cuenta','javascript:escogerModelo();');
-                
+
                 echo $form->hiddenField($model,'idcuentaniff',array('size'=>30,'readonly'=>true));
                 /*echo $form->dropDownList($model, 'idcuentaniff', CHtml::listData(
                     PlanCuentasNiff::model()->findAll(), 'idcuentaniff', 'concatened'),
@@ -86,7 +86,7 @@
                 ?>
                 <br>
 
-	
+
 	<?php echo $form->labelEx($model,'idempresa'); ?>
 	<?php echo $form->dropDownList($model, 'idempresa',CHtml::listData(
                     Empresa::model()->findAll(), 'idempresa', 'razonsocial'));?>
@@ -104,19 +104,17 @@
     ?>
 
 <?php $this->endWidget(); ?>
-                
+
 <?php $this->widget('ModelosWidget', array(
 	'id' => 'modelo_dlg',
 	'nombre' => $model->cuentacontable,
 	'selectCallback' => 'onSelectModelo',
-        'title'=>'Seleccione Cuenta Contable Niff',
-        'url_lista'=>'plancuentasniff/buscarAjaxCuentaNiff',
-        'modelo'=>'Plancuentasnec',
-        'obj_name'=>'nombrecuentaniff',
-        'obj_fk'=>'idcuentaniff',
-        'busqueda'=>'busquedaNiff',
-
-
+    'title'=>'Seleccione Cuenta Contable Niff',
+    'url_lista'=>'plancuentasniff/buscarAjaxCuentaNiff',
+    'modelo'=>'Plancuentasnec',
+    'obj_name'=>'nombrecuentaniff',
+    'obj_fk'=>'idcuentaniff',
+    'busqueda'=>'busquedaNiff',
 ));?>
 
 <script type="text/javascript">
@@ -125,7 +123,7 @@
     }
 
     onSelectModelo = function(fk,nombre,objfk,name){
-           
+
             $("#"+objfk).val(fk);
             $("#"+name).val(nombre);
             $("#modelo_dlg").dialog("close");

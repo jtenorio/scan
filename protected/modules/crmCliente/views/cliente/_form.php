@@ -11,7 +11,9 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'tipodocumento'); ?>
-		<?php echo $form->textField($model,'tipodocumento'); ?>
+		<?php //echo $form->textField($model,'tipodocumento'); ?>
+        <?php echo $form->dropDownList($model,'tipodocumento',$documentos)?>
+
 		<?php echo $form->error($model,'tipodocumento'); ?>
 	</div>
 
@@ -27,7 +29,7 @@
 		<?php echo $form->error($model,'nombrecompleto'); ?>
 	</div>
 
-	
+
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'tipocuenta'); ?>
@@ -65,7 +67,7 @@
 		<?php echo $form->error($model,'direccion_facturacion'); ?>
 	</div>
 
-	
+
 
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
