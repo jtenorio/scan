@@ -73,8 +73,22 @@ class ContactoController extends Controller
 				$this->redirect(array('view','id'=>$model->id));
 		}
 
+                //Obtener los clientes para pasarle al widget
+                $clientes = Cliente::getAllCliente();
+                
+                //Obtener los documentos de indentificacion
+                $documentos = array();
+
+                foreach(TipoIdentificacion::getAllIdentificacion()->getData() as $row)
+                {            
+                    $documentos[$row->id] = $row->nombre;
+                }
+                
 		$this->render('create',array(
 			'model'=>$model,
+                        'clientes'=>$clientes,
+                        'documentos'=>$documentos,
+                    
 		));
 	}
 

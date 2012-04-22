@@ -67,7 +67,8 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'tipodocumento'); ?>
-		<?php echo $form->textField($model,'tipodocumento',array('size'=>20,'maxlength'=>20)); ?>
+		<?php //echo $form->textField($model,'tipodocumento',array('size'=>20,'maxlength'=>20)); ?>
+                <?php echo $form->dropDownList($model,'tipodocumento',$documentos)?>
 		<?php echo $form->error($model,'tipodocumento'); ?>
 	</div>
 

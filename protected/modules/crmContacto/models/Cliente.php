@@ -127,4 +127,17 @@ class Cliente extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
+        
+        /**
+         * Obtiene todos los clientes de la base de datos
+         * @return \CActiveDataProvider 
+         */
+        public static function getAllCliente()
+        {
+                $criteria=new CDbCriteria;
+                $criteria->addCondition("id >= 0");
+                return new CActiveDataProvider(Cliente::model(), array(
+                    'criteria'=>$criteria,                
+                    ));
+        }        
 }

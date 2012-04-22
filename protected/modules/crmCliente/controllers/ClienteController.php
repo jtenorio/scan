@@ -80,16 +80,15 @@ class ClienteController extends Controller
         //Obtener los documentos de indentificacion
         $documentos = array();
 
-        foreach(TipoIdentificacion::getAllIdentificacion() as $row)
-        {
+        foreach(TipoIdentificacion::getAllIdentificacion()->getData() as $row)
+        {            
             $documentos[$row->id] = $row->nombre;
         }
 
 
 		$this->render('create',array(
 			'model'=>$model,
-            'documentos'=>$documentos,
-            
+                        'documentos'=>$documentos,            
 		));
 	}
 

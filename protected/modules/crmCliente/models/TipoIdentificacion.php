@@ -97,7 +97,9 @@ class TipoIdentificacion extends CActiveRecord
     {
             $criteria=new CDbCriteria;
             $criteria->addCondition("id >= 0");
-            return new CActiveDataProvider(TipoIdentificacion::model(), $criteria);
+            return new CActiveDataProvider(TipoIdentificacion::model(), array(
+                'criteria'=>$criteria,                
+                ));
     }
 
 }
