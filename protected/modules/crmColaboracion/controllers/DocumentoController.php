@@ -144,9 +144,11 @@ class DocumentoController extends Controller
 		$model->unsetAttributes();  // clear any default values
 		if(isset($_GET['Documento']))
 			$model->attributes=$_GET['Documento'];
-
+            
+        $documentos=Documento::getAll();
 		$this->renderPartial('admin',array(
 			'model'=>$model,
+            'documentos'=>$documentos,
 		));
 	}
 

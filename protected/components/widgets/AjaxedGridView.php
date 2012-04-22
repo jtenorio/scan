@@ -13,13 +13,11 @@
         public $columnsToShow;
         public $keyName;
         
-        public function init(){
-            
-        }
+        public function init(){}
         public function run(){
             $i=0;
-          foreach($dataSet as $row ){
-              $this->table[$i][$keyName] = $row->$keyName;
+          foreach($this->dataSet->getData() as $row ){
+              $this->table[$i][$this->keyName] = $row->$this->keyName;
               foreach($columnsToShow as $column){
                   $value = $row->$column;
                   
