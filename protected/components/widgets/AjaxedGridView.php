@@ -12,16 +12,21 @@
         public $dataSet;
         public $columnsToShow;
         public $keyName;
+        public $headers;
         
         public function init(){}
         public function run(){
             $i=0;
+            $this->headers = array();
           foreach($this->dataSet->getData() as $row ){
-              $this->table[$i][$this->keyName] = $row->$this->keyName;
-              foreach($columnsToShow as $column){
+              $nombre = $this->keyName; 
+              $this->table[$i][$this->keyName] = $row->$nombre;
+              foreach($this->columnsToShow as $column=>$title){
                   $value = $row->$column;
-                  
                   $this->table[$i][$column] = $value;
+                  if($i==0){
+                      array_push($this->headers, $title);
+                    }
               }
               $i++;
           }  
@@ -29,7 +34,8 @@
              "table"=>$this->table,
              "divToAjax"=>$this->divToAjax,
              "urlToAjax"=>$this->urlToAjax,
-             "keyName"=>$this->keyName
+             "keyName"=>$this->keyName,
+             "headers"=>$this->headers
                  )
              );   
         }
