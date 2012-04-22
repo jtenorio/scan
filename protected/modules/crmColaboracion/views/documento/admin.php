@@ -37,29 +37,23 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 )); ?>
 </div><!-- search-form -->
 
-<?php $this->widget('zii.widgets.grid.CGridView', array(
-	'id'=>'documento-grid',
-	'dataProvider'=>$model->search(),
-	'filter'=>$model,
-	'columns'=>array(
+<?php 
+    $route = '/index.php/crmColaboracion/documento/update';
+    $params=array();
+    $this->widget('AjaxedGridView', array(
+	'dataSet'=>$model,
+	'columnsToShow'=>array(
 		'id',
 		'nombre',
-		'fechaingreso',
-		'fechamodificacion',
+		'fechaingreso',		
 		'tipodocumento',
 		'estadodocumento',
-		/*
 		'categoria',
 		'subcategoria',
 		'fechapublicacion',
-		'fechacaducidad',
-		'idusuario',
-		'idequipo',
-		*/
-		array(
-			'class'=>'CButtonColumn',
-            'template' => '{update}',                         
-            'updateButtonUrl'=>"alert('test')",
-		),
+		'fechacaducidad',		
 	),
+    'divToAjax'=>'agenda',
+    'urlToAjax'=>$this->createUrl($route,$params),
+    'keyName'=>'id',
 )); ?>
