@@ -306,13 +306,13 @@ a{
 
 #content #agenda{
     width: 710px;
-    float: right; 
+    float: right;
 }
 
 /*Estilos del calendario*/
 .calendario{
-    
-    
+
+
 }
 
 .calendario tr td{
@@ -327,4 +327,28 @@ a{
 
 .calendario tr td.hoy{
     background-color: #FBC2C4;
+}
+
+/*Estilos modulo crm cliente*/
+
+#crmInfoCliente{
+    width: 450px;
+    display: block;
+    float: left;
+}
+
+#crmClienteContactos{
+    width: 640px;
+    display: block;
+    float: left;
+    min-height: 225px;
+}
+
+#crmClienteContactos table{
+    width: 100%;
+}
+
+#crmClienteContactos table tr td{
+    border: blue 1px solid;
+    
 }

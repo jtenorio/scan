@@ -5,20 +5,19 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Cliente', 'url'=>array('index')),
-	array('label'=>'Create Cliente', 'url'=>array('create')),
-	array('label'=>'Update Cliente', 'url'=>array('update', 'id'=>$model->id)),
-	array('label'=>'Delete Cliente', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage Cliente', 'url'=>array('admin')),
+
+	array('label'=>'Crear', 'url'=>array('create')),
+
+	array('label'=>'Listar', 'url'=>array('admin')),
 );
 ?>
 
 <h1>View Cliente #<?php echo $model->id; ?></h1>
 
+<div id="crmInfoCliente">
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
 	'attributes'=>array(
-		'id',
 		'tipodocumento',
 		'numerodocumento',
 		'nombrecompleto',
@@ -30,8 +29,18 @@ $this->menu=array(
 		'fax',
 		'telefono_alternativo',
 		'direccion_facturacion',
-		'estado_sistema',
-		'idusuario',
-		'idequipo',
+
 	),
 )); ?>
+</div>
+
+<div id="crmClienteContactos"></div>
+
+<div id="crmClienteCalendario"></div>
+
+
+
+<script type="text/javascript">
+    sendPage('null', '<?php echo Yii::app()->request->baseUrl;?>/index.php/crmCliente/calendario', 'crmClienteCalendario');
+    sendPage('null', '<?php echo Yii::app()->request->baseUrl;?>/index.php/crmCliente/contactos/index/id/<?php echo $model->id?>', 'crmClienteContactos');
+</script>

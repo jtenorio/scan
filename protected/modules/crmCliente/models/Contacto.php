@@ -127,4 +127,15 @@ class Contacto extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
+
+    public static function getContactosByCliente($idCliente)
+    {
+        $criteria=new CDbCriteria;
+        $criteria->compare('idcliente',$idCliente);
+
+        return new CActiveDataProvider(Contacto::model(), array(
+        'criteria'=>$criteria,
+
+            ));
+    }
 }

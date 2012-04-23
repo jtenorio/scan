@@ -8,7 +8,7 @@
 	<p class="note">Fields with <span class="required">*</span> are required.</p>
 
 	<?php echo $form->errorSummary($model); ?>
-	
+
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'nombres'); ?>
@@ -42,18 +42,18 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'fecha_cumpleanos'); ?>
-		<?php 
+		<?php
                 $valorFacha = strlen($model->fecha_cumpleanos)>1?$model->fecha_cumpleanos:date('Y-m-d');
                 $this->widget('zii.widgets.jui.CJuiDatePicker', array(
                                     'name'=>'Contacto[fecha_cumpleanos]',
                                     'value'=>$valorFacha,
-                                    
+
                                     // additional javascript options for the date picker plugin
                                     'options'=>array(
                                         'showAnim'=>'fold',
                                         'dateFormat'=> 'yy-mm-dd',
                                         'changeMonth'=> true,
-                                        'changeYear'=> true,            
+                                        'changeYear'=> true,
                                         'showButtonPanel'=> true,
                                     ),
                                     'htmlOptions'=>array(
@@ -80,18 +80,21 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'idcliente'); ?>
-            	<?php echo $form->textField($model,'idcliente'); ?>
+            	<?php //echo $form->textField($model,'idcliente'); ?>
                 <?php $this->widget('AutocompleterAjaxWidget', array(
                             'fieldId'=>'idcliente',
-                            'fieldName'=>'test',
-                            'data'=>null,
-                    
-                    ));?>
-            
+                            'fieldName'=>'Contacto[idcliente]',
+                            'data'=>$clientes,
+                            'idColumn'=>'id',
+                            'nameColumn'=>'nombrecompleto',
+
+                    )
+                 );?>
+
 		<?php echo $form->error($model,'idcliente'); ?>
 	</div>
 
-	<div class="row">
+<!--	<div class="row">
 		<?php echo $form->labelEx($model,'idequipo'); ?>
 		<?php echo $form->textField($model,'idequipo'); ?>
 		<?php echo $form->error($model,'idequipo'); ?>
@@ -101,7 +104,7 @@
 		<?php echo $form->labelEx($model,'idusuario'); ?>
 		<?php echo $form->textField($model,'idusuario'); ?>
 		<?php echo $form->error($model,'idusuario'); ?>
-	</div>
+	</div>-->
 
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
