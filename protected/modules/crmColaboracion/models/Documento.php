@@ -115,4 +115,13 @@ class Documento extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
+  
+    public static function getAllDocumentos()
+    {
+        $criteria = new CDbCriteria();
+        $criteria->addCondition("id>=0");
+        return new CActiveDataProvider(Documento::model(),array(
+			'criteria'=>$criteria,));
+    }
+
 }

@@ -19,7 +19,11 @@ class CalendarioController extends Controller
             //formato fecha universal Ymd
             $fechaGet = "$anio-$mes-$dia";
             $llamadas = $this->getAllLlamadas($fechaGet);
+            $reuniones = $this->getAllReuniones($fechaGet);
+            $tareas = $this->getAllTareas($fechaGet);
             $eventos['llamadas'][$dia] = $llamadas->getData();
+            $eventos['reuniones'][$dia] = $reuniones->getData();
+            $eventos['tareas'][$dia] = $tareas->getData();
         }
 
 		$this->renderPartial('index',array(
@@ -34,6 +38,18 @@ class CalendarioController extends Controller
     {
         $llamadas = Llamada::model()->getAllLlamadas($fecha);
         return $llamadas;
+    }
+    
+    private function getAllReuniones($fecha)
+    {
+        $reuniones = Reunion::model()->getAllReuniones($fecha);
+        return $reuniones;
+    }
+    
+    private function getAllTareas($fecha)
+    {
+        $tareas = Tarea::model()->getAllTareas($fecha);
+        return $tareas;
     }
 
 	// Uncomment the following methods and override them if needed
