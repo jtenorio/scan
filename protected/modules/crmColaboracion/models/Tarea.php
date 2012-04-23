@@ -122,4 +122,15 @@ class Tarea extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
+    
+    public static function getAllTareas($fecha)
+    {
+       $criteria=new CDbCriteria;
+            $criteria->addCondition("fecha_inicio <= '$fecha'");
+            $criteria->addCondition("fecha_fin >= '$fecha'");
+
+            return new CActiveDataProvider(Tarea::model(), array(
+			'criteria'=>$criteria,
+		)); 
+    }
 }

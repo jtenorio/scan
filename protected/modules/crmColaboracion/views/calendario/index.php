@@ -111,7 +111,26 @@ $daysInMonth = cal_days_in_month(0, $month, $year);
         foreach($eventos['llamadas'][$day_num] as $row)
         {
           
-           echo '<p><a onclick="sendPage(\'null\', \''.Yii::app()->request->baseUrl.'/index.php/crmColaboracion/llamada/view/id/'.$row->id.'\', \'colaboracion\');">'.$row->asunto.'</a></p>';
+           echo '<p><a onclick="sendPage(\'null\', \''.Yii::app()->request->baseUrl.'/index.php/crmColaboracion/llamada/view/id/'.$row->id.'\', \'colaboracion\');">LLamada: '.$row->asunto.'</a></p>';
+        }
+    }
+        //imprimir reuniones
+    
+    if(!is_null($eventos['reuniones'][$day_num]))
+    {
+        foreach($eventos['reuniones'][$day_num] as $row)
+        {
+          
+           echo '<p><a onclick="sendPage(\'null\', \''.Yii::app()->request->baseUrl.'/index.php/crmColaboracion/reunion/view/id/'.$row->id.'\', \'colaboracion\');">Reunion: '.$row->asunto.'</a></p>';
+        }
+    }
+        //imprimir tareas
+    if(!is_null($eventos['tareas'][$day_num]))
+    {
+        foreach($eventos['tareas'][$day_num] as $row)
+        {
+          
+           echo '<p><a onclick="sendPage(\'null\', \''.Yii::app()->request->baseUrl.'/index.php/crmColaboracion/tarea/view/id/'.$row->id.'\', \'colaboracion\');">Tarea: '.$row->nombre_tarea.'</a></p>';
         }
     }
     echo '</td>';

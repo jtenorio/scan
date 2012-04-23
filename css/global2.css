@@ -246,3 +246,14 @@ p.copyright{
 	clear:both;
 	text-align:center;	
 }
+
+
+
+.ajaxedGridView{
+    width: 100%;
+    
+}
+
+.ajaxedGridView tr td{
+    border: 1px solid black;
+}

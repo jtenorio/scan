@@ -38,22 +38,22 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 </div><!-- search-form -->
 
 <?php 
-    $route = '/index.php/crmColaboracion/documento/update';
+    $route = 'index.php/crmColaboracion/documento/update';
     $params=array();
     $this->widget('AjaxedGridView', array(
-	'dataSet'=>$model,
+	'dataSet'=>$documentos,
 	'columnsToShow'=>array(
-		'id',
-		'nombre',
-		'fechaingreso',		
-		'tipodocumento',
-		'estadodocumento',
-		'categoria',
-		'subcategoria',
-		'fechapublicacion',
-		'fechacaducidad',		
+		'id'=>'Número',
+		'nombre'=>'Nombre',
+		'fechaingreso'=>'Fecha Ingreso',		
+		'tipodocumento'=>'Tipo Documento',
+		'estadodocumento'=>'Estado Documento',
+		'categoria'=>'Categoría',
+		'subcategoria'=>'Subcategoría',
+		'fechapublicacion'=>'Fecha Publicación',
+		'fechacaducidad'=>'Fecha Caducidad',		
 	),
-    'divToAjax'=>'agenda',
-    'urlToAjax'=>$this->createUrl($route,$params),
+    'divToAjax'=>'colaboracion',
+    'urlToAjax'=>$route,
     'keyName'=>'id',
 )); ?>

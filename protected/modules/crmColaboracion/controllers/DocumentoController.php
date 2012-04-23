@@ -99,7 +99,7 @@ class DocumentoController extends Controller
 				$this->redirect(array('view','id'=>$model->id));
 		}
 
-		$this->render('update',array(
+		$this->renderPartial('update',array(
 			'model'=>$model,
 		));
 	}
@@ -145,7 +145,7 @@ class DocumentoController extends Controller
 		if(isset($_GET['Documento']))
 			$model->attributes=$_GET['Documento'];
             
-        $documentos=Documento::getAll();
+        $documentos=Documento::getAllDocumentos();
 		$this->renderPartial('admin',array(
 			'model'=>$model,
             'documentos'=>$documentos,
