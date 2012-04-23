@@ -7,11 +7,11 @@
  */
 
 
-class AutocompleteAjaxWidget extends CWidget {
+class AutocompleterAjaxWidget extends CWidget {
     
     /**
      * Arrgelo de los datos q componen el autocompletamiento
-     * @var array
+     * @var \CActiveDataProvider
      */
     public $data;
     

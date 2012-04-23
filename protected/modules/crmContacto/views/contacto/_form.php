@@ -80,7 +80,14 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'idcliente'); ?>
-		<?php echo $form->textField($model,'idcliente'); ?>
+            	<?php echo $form->textField($model,'idcliente'); ?>
+                <?php $this->widget('AutocompleterAjaxWidget', array(
+                            'fieldId'=>'idcliente',
+                            'fieldName'=>'test',
+                            'data'=>null,
+                    
+                    ));?>
+            
 		<?php echo $form->error($model,'idcliente'); ?>
 	</div>
 
