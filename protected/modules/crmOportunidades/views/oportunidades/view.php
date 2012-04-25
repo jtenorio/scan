@@ -13,15 +13,13 @@ $this->menu=array(
 );
 ?>
 
-<h1>View Oportunidad #<?php echo $model->id; ?></h1>
+<h1><?php echo $model->nombre_oportunidad; ?></h1>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
 	'attributes'=>array(
-		'id',
 		'nombre_oportunidad',
 		'fecha_creacion',
-		'fecha_modificacion',
 		'tomacontacto',
 		'cantidad_oportunidad',
 		'tipo_oportunidad',
@@ -30,7 +28,6 @@ $this->menu=array(
 		'etapa_venta',
 		'probabilidad',
 		'cliente_id',
-		'estado_sistema',
 		'mediocontacto',
 		'detallecontacto',
 	),

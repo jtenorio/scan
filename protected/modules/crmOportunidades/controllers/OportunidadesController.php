@@ -106,8 +106,12 @@ class OportunidadesController extends Controller
 				$this->redirect(array('view','id'=>$model->id));
 		}
 
+        //Obtener los clientes para pasarle al widget
+        $clientes = Cliente::getAllCliente();
+
 		$this->render('update',array(
 			'model'=>$model,
+            'clientes'=>$clientes,
 		));
 	}
 

@@ -13,6 +13,7 @@ $this->menu=array(
 );
 ?>
 
-<h1>Update Oportunidad <?php echo $model->id; ?></h1>
+<h1>Oportunidad <?php echo $model->nombre_oportunidad; ?></h1>
 
-<?php echo $this->renderPartial('_form', array('model'=>$model)); ?>
+<?php echo $this->renderPartial('_form', array('model'=>$model,
+        'clientes'=>$clientes,)); ?>
