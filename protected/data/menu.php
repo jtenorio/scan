@@ -108,13 +108,11 @@ return array(
                      )),
     array('label'=>'CRM', 'url'=>'#',
 		'items'=>array(
-		array('label'=>'Colaboracion', 'url'=>'crmColaboracion', 'access'=>'@'),
+                array('label'=>'Colaboracion', 'url'=>'crmColaboracion', 'access'=>'@'),
                 array('label'=>'Contactos', 'url'=>'crmContacto/contacto/admin', 'access'=>'@'),
                 array('label'=>'Clientes', 'url'=>'crmCliente/cliente/admin', 'access'=>'@'),
-		//array('label'=>'Tabla amortización', 'url'=>'herramientas/tabla', 'access'=>'@'),
-		//array('label'=>'Tramas banco', 'url'=>'herramientas/tramaBanco', 'access'=>'supervisor,admin'),
-		//array('label'=>'Información sistema', 'url'=>'herramientas/info_sistema', 'access'=>'admin'),
-                //array('label'=>'Enviar Mail', 'url'=>'herramientas/enviarMail', 'access'=>'admin'),
+                array('label'=>'Oportunidades', 'url'=>'crmOportunidades/oportunidades/admin', 'access'=>'@'),
+
 	)),
 
 );

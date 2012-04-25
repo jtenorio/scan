@@ -12,7 +12,7 @@ $this->menu=array(
 );
 ?>
 
-<h1>View Cliente #<?php echo $model->id; ?></h1>
+<h1>Cliente <?php echo $model->nombrecompleto; ?></h1>
 
 <div id="crmInfoCliente">
 <?php $this->widget('zii.widgets.CDetailView', array(
@@ -29,7 +29,6 @@ $this->menu=array(
 		'fax',
 		'telefono_alternativo',
 		'direccion_facturacion',
-
 	),
 )); ?>
 </div>
@@ -37,8 +36,6 @@ $this->menu=array(
 <div id="crmClienteContactos"></div>
 
 <div id="crmClienteCalendario"></div>
-
-
 
 <script type="text/javascript">
     sendPage('null', '<?php echo Yii::app()->request->baseUrl;?>/index.php/crmCliente/calendario', 'crmClienteCalendario');

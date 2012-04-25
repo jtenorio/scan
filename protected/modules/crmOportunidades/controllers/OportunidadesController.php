@@ -1,6 +1,6 @@
 <?php
 
-class ContactoController extends Controller
+class OportunidadesController extends Controller
 {
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
@@ -61,34 +61,29 @@ class ContactoController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$model=new Contacto;
+		$model=new Oportunidad;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Contacto']))
+		if(isset($_POST['Oportunidad']))
 		{
-			$model->attributes=$_POST['Contacto'];
+			$model->attributes=$_POST['Oportunidad'];
+
+            $model->fecha_creacion = date('Y-m-d');
+            $model->fecha_modificacion = date('Y-m-d');
+            $model->estado_sistema = 1;
+
 			if($model->save())
 				$this->redirect(array('admin','id'=>$model->id));
 		}
 
-                //Obtener los clientes para pasarle al widget
-                $clientes = Cliente::getAllCliente();
-
-                //Obtener los documentos de indentificacion
-                $documentos = array();
-
-                foreach(TipoIdentificacion::getAllIdentificacion()->getData() as $row)
-                {
-                    $documentos[$row->id] = $row->nombre;
-                }
+        //Obtener los clientes para pasarle al widget
+        $clientes = Cliente::getAllCliente();
 
 		$this->render('create',array(
 			'model'=>$model,
-                        'clientes'=>$clientes,
-                        'documentos'=>$documentos,
-
+            'clientes'=>$clientes,
 		));
 	}
 
@@ -104,28 +99,15 @@ class ContactoController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Contacto']))
+		if(isset($_POST['Oportunidad']))
 		{
-			$model->attributes=$_POST['Contacto'];
+			$model->attributes=$_POST['Oportunidad'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
 
-                //Obtener los clientes para pasarle al widget
-                $clientes = Cliente::getAllCliente();
-
-                //Obtener los documentos de indentificacion
-                $documentos = array();
-
-                foreach(TipoIdentificacion::getAllIdentificacion()->getData() as $row)
-                {
-                    $documentos[$row->id] = $row->nombre;
-                }
-
 		$this->render('update',array(
 			'model'=>$model,
-             'clientes'=>$clientes,
-             'documentos'=>$documentos,
 		));
 	}
 
@@ -154,7 +136,7 @@ class ContactoController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Contacto');
+		$dataProvider=new CActiveDataProvider('Oportunidad');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
@@ -165,10 +147,10 @@ class ContactoController extends Controller
 	 */
 	public function actionAdmin()
 	{
-		$model=new Contacto('search');
+		$model=new Oportunidad('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['Contacto']))
-			$model->attributes=$_GET['Contacto'];
+		if(isset($_GET['Oportunidad']))
+			$model->attributes=$_GET['Oportunidad'];
 
 		$this->render('admin',array(
 			'model'=>$model,
@@ -182,7 +164,7 @@ class ContactoController extends Controller
 	 */
 	public function loadModel($id)
 	{
-		$model=Contacto::model()->findByPk($id);
+		$model=Oportunidad::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
@@ -194,7 +176,7 @@ class ContactoController extends Controller
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='contacto-form')
+		if(isset($_POST['ajax']) && $_POST['ajax']==='oportunidad-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();

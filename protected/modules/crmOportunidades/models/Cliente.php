@@ -1,31 +1,31 @@
 <?php
 
 /**
- * This is the model class for table "contacto".
+ * This is the model class for table "cliente".
  *
- * The followings are the available columns in table 'contacto':
+ * The followings are the available columns in table 'cliente':
  * @property integer $id
- * @property string $nombres
- * @property string $apellidos
+ * @property integer $tipodocumento
+ * @property string $numerodocumento
+ * @property string $nombrecompleto
  * @property string $fecha_ingreso
  * @property string $fecha_modificacion
+ * @property string $tipocuenta
+ * @property string $industria
  * @property string $telefono_oficina
- * @property string $telefono_celular
+ * @property string $fax
  * @property string $telefono_alternativo
- * @property string $fecha_cumpleanos
+ * @property string $direccion_facturacion
  * @property boolean $estado_sistema
- * @property string $tipodocumento
- * @property string $numerodocumento
- * @property integer $idcliente
- * @property integer $idequipo
  * @property integer $idusuario
+ * @property integer $idequipo
  */
-class Contacto extends CActiveRecord
+class Cliente extends CActiveRecord
 {
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
-	 * @return Contacto the static model class
+	 * @return Cliente the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{
@@ -37,7 +37,7 @@ class Contacto extends CActiveRecord
 	 */
 	public function tableName()
 	{
-		return 'contacto';
+		return 'cliente';
 	}
 
 	/**
@@ -48,16 +48,16 @@ class Contacto extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-
-			array('idcliente, idequipo, idusuario', 'numerical', 'integerOnly'=>true),
-			array('nombres, apellidos', 'length', 'max'=>250),
-			array('telefono_oficina, telefono_celular, telefono_alternativo', 'length', 'max'=>36),
-			array('tipodocumento', 'length', 'max'=>20),
+			array('tipodocumento, numerodocumento, nombrecompleto, fecha_ingreso, fecha_modificacion, estado_sistema', 'required'),
+			array('tipodocumento, idusuario, idequipo', 'numerical', 'integerOnly'=>true),
 			array('numerodocumento', 'length', 'max'=>13),
-			array('fecha_ingreso, fecha_modificacion, fecha_cumpleanos, estado_sistema', 'safe'),
+			array('nombrecompleto', 'length', 'max'=>500),
+			array('tipocuenta, industria', 'length', 'max'=>150),
+			array('telefono_oficina, fax, telefono_alternativo', 'length', 'max'=>20),
+			array('direccion_facturacion', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, nombres, apellidos, fecha_ingreso, fecha_modificacion, telefono_oficina, telefono_celular, telefono_alternativo, fecha_cumpleanos, estado_sistema, tipodocumento, numerodocumento, idcliente, idequipo, idusuario', 'safe', 'on'=>'search'),
+			array('id, tipodocumento, numerodocumento, nombrecompleto, fecha_ingreso, fecha_modificacion, tipocuenta, industria, telefono_oficina, fax, telefono_alternativo, direccion_facturacion, estado_sistema, idusuario, idequipo', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -79,20 +79,20 @@ class Contacto extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'nombres' => 'Nombres',
-			'apellidos' => 'Apellidos',
-			'fecha_ingreso' => 'Fecha Ingreso',
-			'fecha_modificacion' => 'Fecha Modificacion',
-			'telefono_oficina' => 'Telefono Oficina',
-			'telefono_celular' => 'Telefono Celular',
-			'telefono_alternativo' => 'Telefono Alternativo',
-			'fecha_cumpleanos' => 'Fecha Cumpleanos',
-			'estado_sistema' => 'Estado Sistema',
 			'tipodocumento' => 'Tipodocumento',
 			'numerodocumento' => 'Numerodocumento',
-			'idcliente' => 'Idcliente',
-			'idequipo' => 'Idequipo',
+			'nombrecompleto' => 'Nombrecompleto',
+			'fecha_ingreso' => 'Fecha Ingreso',
+			'fecha_modificacion' => 'Fecha Modificacion',
+			'tipocuenta' => 'Tipocuenta',
+			'industria' => 'Industria',
+			'telefono_oficina' => 'Telefono Oficina',
+			'fax' => 'Fax',
+			'telefono_alternativo' => 'Telefono Alternativo',
+			'direccion_facturacion' => 'Direccion Facturacion',
+			'estado_sistema' => 'Estado Sistema',
 			'idusuario' => 'Idusuario',
+			'idequipo' => 'Idequipo',
 		);
 	}
 
@@ -108,34 +108,36 @@ class Contacto extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id);
-		$criteria->compare('nombres',$this->nombres,true);
-		$criteria->compare('apellidos',$this->apellidos,true);
+		$criteria->compare('tipodocumento',$this->tipodocumento);
+		$criteria->compare('numerodocumento',$this->numerodocumento,true);
+		$criteria->compare('nombrecompleto',$this->nombrecompleto,true);
 		$criteria->compare('fecha_ingreso',$this->fecha_ingreso,true);
 		$criteria->compare('fecha_modificacion',$this->fecha_modificacion,true);
+		$criteria->compare('tipocuenta',$this->tipocuenta,true);
+		$criteria->compare('industria',$this->industria,true);
 		$criteria->compare('telefono_oficina',$this->telefono_oficina,true);
-		$criteria->compare('telefono_celular',$this->telefono_celular,true);
+		$criteria->compare('fax',$this->fax,true);
 		$criteria->compare('telefono_alternativo',$this->telefono_alternativo,true);
-		$criteria->compare('fecha_cumpleanos',$this->fecha_cumpleanos,true);
+		$criteria->compare('direccion_facturacion',$this->direccion_facturacion,true);
 		$criteria->compare('estado_sistema',$this->estado_sistema);
-		$criteria->compare('tipodocumento',$this->tipodocumento,true);
-		$criteria->compare('numerodocumento',$this->numerodocumento,true);
-		$criteria->compare('idcliente',$this->idcliente);
-		$criteria->compare('idequipo',$this->idequipo);
 		$criteria->compare('idusuario',$this->idusuario);
+		$criteria->compare('idequipo',$this->idequipo);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
 	}
-
-    public static function getContactosByCliente($idCliente)
-    {
-        $criteria=new CDbCriteria;
-        $criteria->compare('idcliente',$idCliente);
-
-        return new CActiveDataProvider(Contacto::model(), array(
-        'criteria'=>$criteria,
-
-            ));
-    }
+        
+        /**
+         * Obtiene todos los clientes de la base de datos
+         * @return \CActiveDataProvider 
+         */
+        public static function getAllCliente()
+        {
+                $criteria=new CDbCriteria;
+                $criteria->addCondition("id >= 0");
+                return new CActiveDataProvider(Cliente::model(), array(
+                    'criteria'=>$criteria,                
+                    ));
+        }        
 }

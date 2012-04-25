@@ -1,20 +1,21 @@
 <script type="text/javascript">
 	$(function() {
-		var availableTags = [
+		var availableTags_<?php echo $ajaxFieldName?> = [
 		<?php
                 $i=0;
 		foreach($data as $value =>$text){
-			echo '{"value":"'.trim($value).'","label": "' .trim($text). '", "id":"'.$i.'"}, ';
+			echo '{"value":"'.trim($text).'","label": "' .trim($text). '", "id":"'.$value.'"}, ';
              $i++;
 		}
 		?>
 	];
 
          $( "#<?php echo $ajaxFieldName?>_text").autocomplete({
-			source: availableTags,
+			source: availableTags_<?php echo $ajaxFieldName?>,
 			select: function( event, ui ) {
-                            $('#<?php echo $ajaxFieldName?>_text').val(availableTags[ui.item.id].label);
-                            $('#<?php echo $ajaxFieldName?>').val(availableTags[ui.item.id].value);
+
+                            //$('#<?php echo $ajaxFieldName?>_text').val(availableTags_<?php echo $ajaxFieldName?>[ui.item.id].label);
+                            $('#<?php echo $ajaxFieldName?>').val(availableTags_<?php echo $ajaxFieldName?>[ui.item.id].id);
                         }
                       })
 

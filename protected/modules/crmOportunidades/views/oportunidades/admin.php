@@ -1,10 +1,11 @@
 <?php
 $this->breadcrumbs=array(
-	'Contactos'=>array('index'),
+	'Oportunidads'=>array('index'),
 	'Manage',
 );
 
 $this->menu=array(
+
 	array('label'=>'Crear', 'url'=>array('create')),
 );
 
@@ -14,7 +15,7 @@ $('.search-button').click(function(){
 	return false;
 });
 $('.search-form form').submit(function(){
-	$.fn.yiiGridView.update('contacto-grid', {
+	$.fn.yiiGridView.update('oportunidad-grid', {
 		data: $(this).serialize()
 	});
 	return false;
@@ -22,7 +23,7 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1>Manage Contactos</h1>
+<h1>Oportunidades</h1>
 
 <p>
 You may optionally enter a comparison operator (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>
@@ -37,26 +38,24 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 </div><!-- search-form -->
 
 <?php $this->widget('zii.widgets.grid.CGridView', array(
-	'id'=>'contacto-grid',
+	'id'=>'oportunidad-grid',
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
 	'columns'=>array(
 		'id',
-		'nombres',
-		'apellidos',
-		'fecha_ingreso',
-		'fecha_modificacion',
-		'telefono_oficina',
+		'fecha_posiblecierre',
+		'tomacontacto',
+		'cantidad_oportunidad',
 		/*
-		'telefono_celular',
-		'telefono_alternativo',
-		'fecha_cumpleanos',
+		'tipo_oportunidad',
+		'fecha_posiblecierre',
+		'fecha_realcierre',
+		'etapa_venta',
+		'probabilidad',
+		'cliente_id',
 		'estado_sistema',
-		'tipodocumento',
-		'numerodocumento',
-		'idcliente',
-		'idequipo',
-		'idusuario',
+		'mediocontacto',
+		'detallecontacto',
 		*/
 		array(
 			'class'=>'CButtonColumn',
