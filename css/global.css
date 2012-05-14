@@ -350,5 +350,22 @@ a{
 
 #crmClienteContactos table tr td{
     border: blue 1px solid;
-    
+
+}
+
+#crmClienteOprtunidades{
+
+}
+
+#crmClienteOprtunidades table{
+    width: 100%;
+}
+
+#crmClienteOprtunidades table tr{
+    cursor: pointer;
+}
+
+#crmClienteOprtunidades table tr td{
+    border: blue 1px solid;
+
 }

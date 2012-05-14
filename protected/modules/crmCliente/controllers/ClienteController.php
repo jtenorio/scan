@@ -53,6 +53,8 @@ class ClienteController extends Controller
 		$this->render('view',array(
 			'model'=>$this->loadModel($id),
 		));
+
+        
 	}
 
 	/**
@@ -81,14 +83,14 @@ class ClienteController extends Controller
         $documentos = array();
 
         foreach(TipoIdentificacion::getAllIdentificacion()->getData() as $row)
-        {            
+        {
             $documentos[$row->id] = $row->nombre;
         }
 
 
 		$this->render('create',array(
 			'model'=>$model,
-                        'documentos'=>$documentos,            
+                        'documentos'=>$documentos,
 		));
 	}
 

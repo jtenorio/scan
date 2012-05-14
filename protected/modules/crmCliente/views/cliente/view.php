@@ -37,7 +37,10 @@ $this->menu=array(
 
 <div id="crmClienteCalendario"></div>
 
+<div id="crmClienteOprtunidades"></div>
+
 <script type="text/javascript">
     sendPage('null', '<?php echo Yii::app()->request->baseUrl;?>/index.php/crmCliente/calendario', 'crmClienteCalendario');
     sendPage('null', '<?php echo Yii::app()->request->baseUrl;?>/index.php/crmCliente/contactos/index/id/<?php echo $model->id?>', 'crmClienteContactos');
+    sendPage('null', '<?php echo Yii::app()->request->baseUrl;?>/index.php/crmCliente/oportunidades/index/idCliente/<?php echo $model->id?>', 'crmClienteOprtunidades');
 </script>
