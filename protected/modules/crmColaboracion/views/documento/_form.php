@@ -16,8 +16,8 @@
         $( "#Documento_fechapublicacion" ).datepicker({ dateFormat: 'yy-mm-dd' });
 
 	});
-	</script>
-    
+</script>
+
 <div class="form" id="formulario">
 
 <?php $form=$this->beginWidget('CActiveForm', array(
@@ -35,39 +35,44 @@
 		<?php echo $form->error($model,'nombre'); ?>
 	</div>
 
-<!--	<div class="row">
-		<?php echo $form->labelEx($model,'fechaingreso'); ?>
-		<?php echo $form->textField($model,'fechaingreso'); ?>
-		<?php echo $form->error($model,'fechaingreso'); ?>
-	</div>-->
 
-<!--	<div class="row">
-		<?php echo $form->labelEx($model,'fechamodificacion'); ?>
-		<?php echo $form->textField($model,'fechamodificacion'); ?>
-		<?php echo $form->error($model,'fechamodificacion'); ?>
-	</div>-->
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'tipodocumento'); ?>
-		<?php echo $form->textField($model,'tipodocumento',array('size'=>60,'maxlength'=>60)); ?>
-		<?php echo $form->error($model,'tipodocumento'); ?>
-	</div>
+    <div class="row">
+        <?php echo $form->labelEx($model, 'tipodocumento'); ?>
+        <?php //echo $form->textField($model,'tipodocumento',array('size'=>60,'maxlength'=>60)); ?>
+        <?php
+        $this->widget('ComboFromArrayWidget', array(
+            'arrayKey' => 'tipoDocumento',
+            'name' => 'Documento[tipodocumento]',
+            'id' => 'Documento_tipodocumento',
+                )
+        );
+        ?>
+    <?php echo $form->error($model, 'tipodocumento'); ?>
+    </div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'estadodocumento'); ?>
-		<?php 
+		<?php
             echo $form->dropDownList($model,'estadodocumento',array(
                 0=>'Inactivo',
                 1=>'Activo'
-                ),array()); 
+                ),array());
         ?>
 		<?php echo $form->error($model,'estadodocumento'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'categoria'); ?>
-		<?php echo $form->textField($model,'categoria',array('size'=>60,'maxlength'=>60)); ?>
+		<?php //echo $form->textField($model,'categoria',array('size'=>60,'maxlength'=>60)); ?>
 		<?php echo $form->error($model,'categoria'); ?>
+
+        <?php $this->widget('ComboFromArrayWidget', array(
+                            'arrayKey'=>'categoria',
+                            'name'=>'Documento[categoria]',
+                            'id'=>'Documento_categoria',
+                    )
+                 );?>
 	</div>
 
 	<div class="row">
@@ -90,17 +95,7 @@
 		<?php echo $form->error($model,'fechacaducidad'); ?>
 	</div>
 
-<!--	<div class="row">
-		<?php echo $form->labelEx($model,'idusuario'); ?>
-		<?php echo $form->textField($model,'idusuario'); ?>
-		<?php echo $form->error($model,'idusuario'); ?>
-	</div>-->
 
-<!--	<div class="row">
-		<?php echo $form->labelEx($model,'idequipo'); ?>
-		<?php echo $form->textField($model,'idequipo'); ?>
-		<?php echo $form->error($model,'idequipo'); ?>
-	</div>-->
 
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>

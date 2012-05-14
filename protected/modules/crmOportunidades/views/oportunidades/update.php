@@ -16,4 +16,5 @@ $this->menu=array(
 <h1>Oportunidad <?php echo $model->nombre_oportunidad; ?></h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model,
-        'clientes'=>$clientes,)); ?>
+        'clientes'=>$clientes,
+    )); ?>
