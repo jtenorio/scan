@@ -10,7 +10,7 @@ $this->menu=array(
 );
 ?>
 
-<h1>Create Oportunidad</h1>
+<h1>Nueva Oportunidad</h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model,
         'clientes'=>$clientes)); ?>

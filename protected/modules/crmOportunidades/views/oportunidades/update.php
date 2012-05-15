@@ -6,10 +6,10 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Oportunidad', 'url'=>array('index')),
-	array('label'=>'Create Oportunidad', 'url'=>array('create')),
-	array('label'=>'View Oportunidad', 'url'=>array('view', 'id'=>$model->id)),
-	array('label'=>'Manage Oportunidad', 'url'=>array('admin')),
+
+	array('label'=>'Crear', 'url'=>array('create')),
+
+	array('label'=>'Listar', 'url'=>array('admin')),
 );
 ?>
 
