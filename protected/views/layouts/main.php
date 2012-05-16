@@ -36,17 +36,17 @@
     </h1>
   </div>
 </div>
-<?php if(isset(Yii::app()->controller->module)){     ?>   
+<?php if(isset(Yii::app()->controller->module)){     ?>
 <div id="menu">
-	<div class="wrapper">    
+	<div class="wrapper">
     <div class="ddsmoothmenu" id="nav">
-      <?php 
-       
-        $this->widget('zii.widgets.CMenu', Yii::app()->menuBuilder->getMenuOptions() ); 
-      
+      <?php
+
+        $this->widget('zii.widgets.CMenu', Yii::app()->menuBuilder->getMenuOptions() );
+
         ?>
       <ul>
-        
+
         <li class="last"><a href="#">CONTABILIDAD</a>
         	<ul>
             <li><a href="<?php echo Yii::app()->request->baseUrl.'/index.php/'?>/contabilidad/maestroasiento/admin">Maestro Asiento</a></li>
@@ -58,20 +58,20 @@
         </li>
       </ul>
     </div>
-           
+
   </div>
 </div>
 <?php } ?>
 <div class="wrapper" id="section">
-	<?php echo $content; 
-       
+	<?php echo $content;
+
         ?>
 </div>
-  
+
 <div class="wrapper" id="footer">
 <!--  	Tiempo de respuesta del servidor: 00:05 segundos-->
 </div>
-    
+
 
 </body>
 </html>

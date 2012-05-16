@@ -1,3 +1,6 @@
+<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.ui.dialog.js"></script>
+<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.ui.draggable.js"></script>
+
 <form name="parametros" id="parametros" method="POST" enctype="multipart/form-data" style="clear: both;">
 
 <table>
@@ -106,7 +109,8 @@ $daysInMonth = cal_days_in_month(0, $month, $year);
     echo '<td class="'.$class.'">';
         //imprimir las llamadas
 
-    echo '<p><b>'.$day_num.'</b> <a onclick="">[+] Agregar Actividad</a></p>';
+    echo '<p><b>'.$day_num.'</b> <a onclick=" sendPage(\'null\', \''.Yii::app()->request->baseUrl.'/index.php/crmColaboracion\', \'agendaContacto\');
+                $(\'#agendaContacto2\').dialog(\'open\');">[+] Agregar Actividad</a></p>';
 
     if(!is_null($eventos['llamadas'][$day_num]))
     {
@@ -146,3 +150,13 @@ $daysInMonth = cal_days_in_month(0, $month, $year);
         $day_count = 1;
     }
  }
+ ?>
+<div id="agendaContacto2" style="display: none;">
+
+
+</div>
+<script>
+	$(function() {
+		$( "#agendaContacto2" ).dialog({ autoOpen: false },{ draggable: true },{ minWidth: 1100 },{ position: [10,120] });
+	});
+</script>
