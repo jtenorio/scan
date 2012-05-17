@@ -14,6 +14,9 @@ class ComboFromArrayWidget extends CWidget {
 
     public $selectedValue;
 
+    public $dependencia;
+
+    public $dependenciaData;
 
     public function init() {
 
@@ -35,9 +38,11 @@ class ComboFromArrayWidget extends CWidget {
                 'name'=>$this->name,
                 'id'=>$this->id,
                 'selected' => $this->selectedValue,
+                'dependencia'=>$this->dependencia,
+                'dependenciaData'=>$this->dependenciaData,
             )
         );
-        
+
     }
 
 }

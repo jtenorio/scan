@@ -71,15 +71,18 @@
                             'arrayKey'=>'categoria',
                             'name'=>'Documento[categoria]',
                             'id'=>'Documento_categoria',
+                            'dependencia'=>TRUE,
+                            'dependenciaData'=>array('name'=>'Documento[subcategoria]','id'=>'Documento_subcategoria'
+                                ,'label'=>'Subcategoria','selected'=>NULL),
                     )
                  );?>
 	</div>
-
+<!--
 	<div class="row">
 		<?php echo $form->labelEx($model,'subcategoria'); ?>
 		<?php echo $form->textField($model,'subcategoria',array('size'=>60,'maxlength'=>60)); ?>
 		<?php echo $form->error($model,'subcategoria'); ?>
-	</div>
+	</div>-->
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'fechapublicacion'); ?>

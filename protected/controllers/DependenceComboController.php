@@ -2,9 +2,26 @@
 
 class DependenceComboController extends Controller
 {
-	public function actionIndex()
+	public function actionIndex($key,$name,$id,$label,$selected = NULL)
 	{
-		$this->render('index');
+        //Obtener los datos de los combos
+        $file = Yii::getPathOfAlias('application.data.combo').'.php';
+        $loaded = include($file);
+
+        if(isset($loaded[$key])){
+            $data = $loaded[$key];
+        }else{
+            $data=array();
+        }
+
+
+		$this->renderPartial('index',array(
+            'data'=>$data,
+            'name'=>$name,
+            'id'=>$id,
+            'label'=>$label,
+            'selected'=>$selected,
+        ));
 	}
 
 	// Uncomment the following methods and override them if needed
