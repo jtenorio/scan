@@ -129,11 +129,16 @@ class Reunion extends CActiveRecord
 		));
 	}
     
-    public static function getAllReuniones($fecha)
+    public static function getAllReuniones($fecha,$id=NULL)
     {
-        $criteria=new CDbCriteria;
+            $criteria=new CDbCriteria;
             $criteria->addCondition("fecha_inicio <= '$fecha'");
             $criteria->addCondition("fecha_fin >= '$fecha'");
+            
+            if(!is_null($id))
+            {
+                 $criteria->compare('padre_id', $id);
+            }
 
             return new CActiveDataProvider(Reunion::model(), array(
 			'criteria'=>$criteria,

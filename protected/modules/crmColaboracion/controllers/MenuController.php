@@ -2,9 +2,11 @@
 
 class MenuController extends Controller
 {
-	public function actionIndex()
+	public function actionIndex($id=NULL)
 	{
-		$this->renderPartial('index');
+		$this->renderPartial('index',array(
+            'id'=>$id
+            ));
 	}
 
 	// Uncomment the following methods and override them if needed

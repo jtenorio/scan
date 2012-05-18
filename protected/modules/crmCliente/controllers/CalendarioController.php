@@ -2,7 +2,7 @@
 
 class CalendarioController extends Controller
 {
-	public function actionIndex()
+	public function actionIndex($id)
 	{
 
         $mes = isset($_REQUEST['mes'])?$_REQUEST['mes']:date('m');
@@ -14,41 +14,45 @@ class CalendarioController extends Controller
         $diasMes = cal_days_in_month(0, $mes, $anio);
         $eventos = array();
 
-        for($dia = 1;$dia <= $diasMes;$dia++)
+        if($id != null )
         {
-            //formato fecha universal Ymd
-            $fechaGet = "$anio-$mes-$dia";
-            $llamadas = $this->getAllLlamadas($fechaGet);
-            $reuniones = $this->getAllReuniones($fechaGet);
-            $tareas = $this->getAllTareas($fechaGet);
-            $eventos['llamadas'][$dia] = $llamadas->getData();
-            $eventos['reuniones'][$dia] = $reuniones->getData();
-            $eventos['tareas'][$dia] = $tareas->getData();
+            for($dia = 1;$dia <= $diasMes;$dia++)
+            {
+                //formato fecha universal Ymd
+                $fechaGet = "$anio-$mes-$dia";
+                $llamadas = $this->getAllLlamadas($fechaGet,$id);
+                $reuniones = $this->getAllReuniones($fechaGet,$id);
+                $tareas = $this->getAllTareas($fechaGet,$id);
+                $eventos['llamadas'][$dia] = $llamadas->getData();
+                $eventos['reuniones'][$dia] = $reuniones->getData();
+                $eventos['tareas'][$dia] = $tareas->getData();
+            }
         }
 
 		$this->renderPartial('index',array(
                     'mes'=>$mes,
                     'anio'=>$anio,
                     'eventos'=>$eventos,
+                    'id'=>$id,
                 ));
 	}
 
 
-    private function getAllLlamadas($fecha)
+    private function getAllLlamadas($fecha,$id)
     {
-        $llamadas = Llamada::model()->getAllLlamadas($fecha);
+        $llamadas = Llamada::model()->getAllLlamadas($fecha,$id);
         return $llamadas;
     }
     
-    private function getAllReuniones($fecha)
+    private function getAllReuniones($fecha,$id)
     {
-        $reuniones = Reunion::model()->getAllReuniones($fecha);
+        $reuniones = Reunion::model()->getAllReuniones($fecha,$id);
         return $reuniones;
     }
     
-    private function getAllTareas($fecha)
+    private function getAllTareas($fecha,$id)
     {
-        $tareas = Tarea::model()->getAllTareas($fecha);
+        $tareas = Tarea::model()->getAllTareas($fecha,$id);
         return $tareas;
     }
 

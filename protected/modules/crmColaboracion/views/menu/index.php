@@ -11,7 +11,7 @@ $this->breadcrumbs=array(
                 <select id="optColaboracion" onchange="
                         switch(this.value){
                             case '1':
-                                sendPage('null', '<?php echo Yii::app()->request->baseUrl;?>/index.php/crmColaboracion/llamada/create', 'colaboracion');
+                                sendPage('null', '<?php echo Yii::app()->request->baseUrl;?>/index.php/crmColaboracion/llamada/create/id/<?php echo $id?>', 'colaboracion');
                                 break;
                             case '2':
                                 sendPage('null', '<?php echo Yii::app()->request->baseUrl;?>/index.php/crmColaboracion/reunion/create', 'colaboracion');

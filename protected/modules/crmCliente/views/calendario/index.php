@@ -109,7 +109,7 @@ $daysInMonth = cal_days_in_month(0, $month, $year);
     echo '<td class="'.$class.'">';
         //imprimir las llamadas
 
-    echo '<p><b>'.$day_num.'</b> <a onclick=" sendPage(\'null\', \''.Yii::app()->request->baseUrl.'/index.php/crmColaboracion\', \'agendaContacto\');
+    echo '<p><b>'.$day_num.'</b> <a onclick=" sendPage(\'null\', \''.Yii::app()->request->baseUrl.'/index.php/crmColaboracion/menu/index/id/'.$id.'\', \'agendaContacto2\');
                 $(\'#agendaContacto2\').dialog(\'open\');">[+] Agregar Actividad</a></p>';
 
     if(!is_null($eventos['llamadas'][$day_num]))

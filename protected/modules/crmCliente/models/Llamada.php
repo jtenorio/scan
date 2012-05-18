@@ -122,14 +122,20 @@ class Llamada extends CActiveRecord
 		));
 	}
 
-    public static function getAllLlamadas($fecha)
+    public static function getAllLlamadas($fecha,$id=NULL)
     {
             $criteria=new CDbCriteria;
             $criteria->addCondition("fecha_incio <= '$fecha'");
             $criteria->addCondition("fecha_fin >= '$fecha'");
 
+            if(!is_null($id))
+            {
+                $criteria->compare('padre_id', $id);
+            }
+           
             return new CActiveDataProvider(Llamada::model(), array(
-			'criteria'=>$criteria,
-		));
+                'criteria'=>$criteria,
+                ));
+            
     }
 }

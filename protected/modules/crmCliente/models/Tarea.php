@@ -123,11 +123,16 @@ class Tarea extends CActiveRecord
 		));
 	}
     
-    public static function getAllTareas($fecha)
+    public static function getAllTareas($fecha,$id=NULL)
     {
        $criteria=new CDbCriteria;
             $criteria->addCondition("fecha_inicio <= '$fecha'");
             $criteria->addCondition("fecha_fin >= '$fecha'");
+            
+            if(!is_null($id))
+            {
+                $criteria->compare('padre_id', $id);
+            }
 
             return new CActiveDataProvider(Tarea::model(), array(
 			'criteria'=>$criteria,

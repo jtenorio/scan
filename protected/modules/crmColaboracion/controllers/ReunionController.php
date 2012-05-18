@@ -59,7 +59,7 @@ class ReunionController extends Controller
 	 * Creates a new model.
 	 * If creation is successful, the browser will be redirected to the 'view' page.
 	 */
-	public function actionCreate()
+	public function actionCreate($id=NULL)
 	{
 		$model=new Reunion;
 
@@ -72,6 +72,7 @@ class ReunionController extends Controller
             $model->fecha_ingreso = date('Ymd');
             $model->fecha_modificacion = date('Ymd');
             $model->estado_sistema = 0;
+            $model->padre_id = $id;
             
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));

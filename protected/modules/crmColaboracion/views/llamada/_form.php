@@ -23,7 +23,10 @@
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'llamada-form',
 	'enableAjaxValidation'=>false,
-)); ?>
+)); 
+
+echo $form->hiddenField($model,'padre_id',array('value'=>$id));
+?>
 
 	<p class="note">Fields with <span class="required">*</span> are required.</p>
 
