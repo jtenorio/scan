@@ -89,13 +89,14 @@ class MaestrochequeproveedorController extends Controller
                 $proveedorByName = array();
 
                 $proveedores = new Proveedor();
-                $listaProveedores = $proveedores->search()->getData();
+                //$listaProveedores = $proveedores->search()->getData();
+                $listaProveedores = Proveedor::getALlProveedor();
                 $loadAnticipos = FALSE;
 
                 foreach($listaProveedores as $prov)
                 {
                     $proveedorByRuc[$prov->id] = $prov->cedularuc;
-                    $proveedorByName[$prov->id] = $prov->razonsocial;
+                    $proveedorByName[$prov->id] = utf8_encode($prov->razonsocial);
                 }
 
                 ///////////////////////////////////////////
@@ -266,6 +267,7 @@ class MaestrochequeproveedorController extends Controller
                                 
                                 if(Tipodocumentocontable::getTipoDocumentoById($_POST['Maestroasiento']['iddocumento'])->numeraautomatico)
                                     $model->numerodocumento = Tipodocumentocontable::getNuevoNumeroDocumento($_POST['Maestroasiento']['iddocumento']);
+                                echo($model->numerodocumento);
                                 ////////////////////////////////////////////////////////
                                 if($model->save())
                                 {
@@ -435,8 +437,9 @@ class MaestrochequeproveedorController extends Controller
                 $guardar = TRUE;
 
                 $proveedores = new Proveedor();
-                $listaProveedores = $proveedores->search()->getData();
-
+                //$listaProveedores = $proveedores->search()->getData();
+                $listaProveedores = Proveedor::getALlProveedor();
+                
                 foreach($listaProveedores as $prov)
                 {
                     $proveedorByRuc[$prov->id] = $prov->cedularuc;

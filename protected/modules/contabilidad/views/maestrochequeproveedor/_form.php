@@ -48,6 +48,19 @@
 	});
     
 </script>
+
+<style type="text/css">
+    #dialogProveedores{
+        max-height: 300px;
+        min-width: 200px;
+        overflow: auto;
+        display: block;
+        
+    }
+    
+</style>
+
+
 <div style="display: none;">
 <?php
 //cuadro de dialogo
@@ -161,7 +174,7 @@ $this->endWidget('zii.widgets.jui.CJuiDialog');
                  $options = array('size'=>10,'maxlength'=>10,);
                  if($model->isNewRecord ){
                         if(!is_null($numeroDoc)){
-                            $options['value']= '#';
+                            $options['value']= '';
                             $options['readonly']= 'readonly';
                         }
                     }else{

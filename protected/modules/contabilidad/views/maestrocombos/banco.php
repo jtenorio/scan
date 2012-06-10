@@ -19,7 +19,7 @@
 if(!is_null($numeroDoc)){
     ?>
 <script type="text/javascript">
-     $("#Maestroasiento_numerodocumento").val('#');
+     $("#Maestroasiento_numerodocumento").val('');
      $("#Maestroasiento_numerodocumento").attr('readonly','readonly');
 </script>
 

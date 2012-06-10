@@ -76,12 +76,12 @@ $form=$this->beginWidget('CActiveForm', array(
                  $options = array('size'=>10,'maxlength'=>10,);
                  
                 if($model->isNewRecord ){
-                        if(!is_null($numeroDoc)){
+                        if(is_null($numeroDoc)){
                             $options['value']= '#';
-                            $options['readonly']= 'readonly';
+                            //$options['readonly']= 'readonly';
                         }
                     }else{
-                        //$options['value']= $model->numerodocumento;
+                        $options['value']= $model->numerodocumento;
                         $options['readonly']= 'readonly';
                     }
                 echo $form->textField($model,'numerodocumento',$options); ?>

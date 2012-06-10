@@ -113,24 +113,24 @@ class Proveedor extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('id',$this->id);
-		$criteria->compare('cedularuc',$this->cedularuc,true);
-		$criteria->compare('razonsocial',$this->razonsocial,true);
-		$criteria->compare('direccion',$this->direccion,true);
-		$criteria->compare('telefono',$this->telefono,true);
-		$criteria->compare('fax',$this->fax,true);
-		$criteria->compare('ciudad',$this->ciudad);
-		$criteria->compare('email',$this->email,true);
-		$criteria->compare('tipodocumento',$this->tipodocumento);
-		$criteria->compare('contacto',$this->contacto,true);
-		$criteria->compare('nota1',$this->nota1,true);
-		$criteria->compare('nota2',$this->nota2,true);
-		$criteria->compare('saldo',$this->saldo,true);
-		$criteria->compare('cuentacontableporpagar',$this->cuentacontableporpagar);
-		$criteria->compare('cuentacontableanticipo',$this->cuentacontableanticipo);
-		$criteria->compare('autorizacionfactura',$this->autorizacionfactura,true);
-		$criteria->compare('fechacaducidad',$this->fechacaducidad,true);
-		$criteria->compare('idtipoproveedor',$this->idtipoproveedor);
+		$criteria->addCondition("1=1");
+//		$criteria->compare('cedularuc',$this->cedularuc,true);
+//		$criteria->compare('razonsocial',$this->razonsocial,true);
+//		$criteria->compare('direccion',$this->direccion,true);
+//		$criteria->compare('telefono',$this->telefono,true);
+//		$criteria->compare('fax',$this->fax,true);
+//		$criteria->compare('ciudad',$this->ciudad);
+//		$criteria->compare('email',$this->email,true);
+//		$criteria->compare('tipodocumento',$this->tipodocumento);
+//		$criteria->compare('contacto',$this->contacto,true);
+//		$criteria->compare('nota1',$this->nota1,true);
+//		$criteria->compare('nota2',$this->nota2,true);
+//		$criteria->compare('saldo',$this->saldo,true);
+//		$criteria->compare('cuentacontableporpagar',$this->cuentacontableporpagar);
+//		$criteria->compare('cuentacontableanticipo',$this->cuentacontableanticipo);
+//		$criteria->compare('autorizacionfactura',$this->autorizacionfactura,true);
+//		$criteria->compare('fechacaducidad',$this->fechacaducidad,true);
+//		$criteria->compare('idtipoproveedor',$this->idtipoproveedor);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -140,6 +140,13 @@ class Proveedor extends CActiveRecord
     public static function getProveedor($idProveedor)
     {
         $result = Proveedor::model()->findByPk($idProveedor);
+        return $result;
+    }
+    
+    
+    public static function getALlProveedor()
+    {
+        $result = Proveedor::model()->findAll('', array('order by razonsocial'));
         return $result;
     }
 }

@@ -278,10 +278,10 @@ class MaestroasientoController extends Controller
             $model=$this->loadModel($id);
 
             //si el asiento esta mayorizado no debe permitir editar
-            if($model->mayorizado || $model->estado)
-            {
-                $this->redirect(array('maestroasiento/view','id'=>$id));
-            }
+//            if($model->mayorizado || $model->estado )
+//            {
+//                $this->redirect(array('maestroasiento/view','id'=>$id));
+//            }
 
 
             //Iniciar la session

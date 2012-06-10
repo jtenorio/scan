@@ -42,7 +42,18 @@
 	});
     
 </script>
-<div style="display: none;">
+<style type="text/css">
+    #dialogProveedores{
+        max-height: 300px;
+        min-width: 200px;
+        overflow: auto;
+        display: block;
+        
+    }
+    
+</style>
+
+<div style="display: none; ">
 <?php
 //cuadro de dialogo
 

@@ -90,14 +90,15 @@ class MaestroanticipoproveedorController extends Controller
                 $proveedorByName = array();
                 
                 $proveedores = new Proveedor();
-                $listaProveedores = $proveedores->search()->getData();    
+                //$listaProveedores = $proveedores->search()->getData();    
+                $listaProveedores = Proveedor::getALlProveedor();
                 
                 foreach($listaProveedores as $prov)
                 {
                     $proveedorByRuc[$prov->id] = $prov->cedularuc;
                     $proveedorByName[$prov->id] = $prov->razonsocial;
                 }
-                
+                                                       
                 ///////////////////////////////////////////
                 
                 //inicializar los array
@@ -394,7 +395,8 @@ class MaestroanticipoproveedorController extends Controller
                 $guardar = TRUE;
                 
                 $proveedores = new Proveedor();
-                $listaProveedores = $proveedores->search()->getData();    
+                //$listaProveedores = $proveedores->search()->getData();    
+                $listaProveedores = Proveedor::getALlProveedor();
                 
                 foreach($listaProveedores as $prov)
                 {
