@@ -2,10 +2,13 @@
 
 class MenuController extends Controller
 {
-	public function actionIndex($id=NULL)
+	public function actionIndex($id=NULL,$dia=NULL,$mes=NULL,$anio)
 	{
 		$this->renderPartial('index',array(
-            'id'=>$id
+            'id'=>$id,
+            'dia'=>$dia,
+            'mes'=>$mes,
+            'anio'=>$anio,
             ));
 	}
 

@@ -102,3 +102,9 @@
 	*/ ?>
 
 </div>
+
+<?php if(!is_null($data->padre_id)){?>
+    <script type="text/javascript">
+        sendPage('null', '<?php echo Yii::app()->request->baseUrl;?>/index.php/crmCliente/calendario/index/id/<?php echo $data->padre_id?>', 'crmClienteCalendario');
+    </script>
+<?php } ?>

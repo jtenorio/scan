@@ -23,7 +23,7 @@
 
         <div id="izquierda">
             <script type="text/javascript">
-                sendPage('null', '<?php echo Yii::app()->request->baseUrl;?>/index.php/crmColaboracion/menu', 'izquierda');
+                sendPage('null', '<?php echo Yii::app()->request->baseUrl;?>/index.php/crmColaboracion/menu/index/id/NULL/dia/NULL/mes/NULL/anio/NULL', 'izquierda');
             </script>
         </div>
 		<div id="agenda"><?php echo $content; ?>

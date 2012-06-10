@@ -59,7 +59,7 @@ class LlamadaController extends Controller
 	 * Creates a new model.
 	 * If creation is successful, the browser will be redirected to the 'view' page.
 	 */
-	public function actionCreate($id=NULL)
+	public function actionCreate($id=NULL,$dia=NULL,$mes=NULL,$anio)
 	{
 		$model=new Llamada;
 
@@ -84,6 +84,9 @@ class LlamadaController extends Controller
 		$this->renderPartial('create',array(
 			'model'=>$model,
             'id'=>$id,
+            'dia'=>$dia,
+            'mes'=>$mes,
+            'anio'=>$anio,
 		));
 	}
 

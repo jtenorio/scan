@@ -60,7 +60,14 @@ echo $form->hiddenField($model,'padre_id',array('value'=>$id));
 
         <?php echo $form->labelEx($model,'fecha_incio'); ?>
         <?php
-            $hoy = date("Y-m-d");
+            if(!is_null($dia)&&!is_null($mes)&&!is_null($anio))
+            {
+                $hoy = $anio.'-'.$mes.'-'.$dia;
+            }
+            else
+            { 
+                $hoy = date("Y-m-d");
+            }
             echo $form->textField($model,'fecha_incio',array('value'=>$hoy,'readonly'=>'readonly')); ?>
         <?php echo $form->error($model,'fecha_incio'); ?>
 <!--		<p>Date: <input type="text" id="datepicker" name="Llamada[fecha_incio]" ></p>
