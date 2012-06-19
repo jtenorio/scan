@@ -282,7 +282,7 @@ class Compraingreso extends CActiveRecord
      * @param integer $idProveedor
      * @return CSqlDataProvider 
      */
-    public static function getComprasProveedor($idProveedor)
+        public static function getComprasProveedor($idProveedor)
     {
          $sql="SELECT c.*,cstm.* FROM compraingreso c JOIN compraingreso_cstm cstm
            ON c.idcompra  = cstm.idcompra

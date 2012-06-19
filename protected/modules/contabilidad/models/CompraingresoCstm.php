@@ -146,9 +146,14 @@ class CompraingresoCstm extends CActiveRecord
     {
         $actual = CompraingresoCstm::model()->findByAttributes(array('idcompra'=>$idCompra));
         $actual->saldocompra = $actual->saldocompra - $pago;
+      
+        $actual->saldocompra = round($actual->saldocompra,3); 
         $actual->pagadocompra = $actual->pagadocompra + $pago;
         
         $actual->save();
+        print_r($actual->saldocompra);
+        print_r($actual->pagadocompra);
+//        die();
         
         return $actual;
     }

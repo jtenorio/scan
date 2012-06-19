@@ -317,15 +317,17 @@ class MaestrochequeproveedorController extends Controller
                                         $compra = Compraingreso::getCompra($idCompra);
                                         
                                         //generar el detalle del pago a proveedor
-                                        $detallePago = Detallepagoproveedor::model();
+//                                        $detallePago = Detallepagoproveedor::model();
+                                        $detallePago = new Detallepagoproveedor;
                                         $detallePago->fechamovimiento= date('Y-m-d');
+                                
                                         $detallePago->valormomimiento = $pago;
                                         $detallePago->saldocompra = $compracstm->saldocompra;
                                         $detallePago->tipopagocrdb = 'AB';
                                         $detallePago->asientoreferencia = $model->idasiento;
                                         $detallePago->idperiodo = $model->periodocontable;
                                         $detallePago->estado= 0;
-                                        $detallePago->fechahoragrabado = date('Y-m-d h:m:s');
+                                        $detallePago->fechahoragrabado = date('Y-m-d');
                                         $detallePago->idproveedor = $compra->idproveedor;
                                         
                                         //////////////////////////////////////////////////////
@@ -340,15 +342,19 @@ class MaestrochequeproveedorController extends Controller
                                         //////////////////////////////////////////////////////
                                         
                                         $detallePago->documentopago = $documentopago;
-                                        if($detallePago->save()){
-                                             
-                                             //print_r($detallePago->attributes);
-                                             
-                                        }else{
-                                            print_r($detallePago->attributes);
-                                            die('No se puede guardar el detalle del pago al proveedor');
-                                        }
                                         
+                                        if($detallePago->validate())
+                                        {
+                                            if($detallePago->save()){
+
+                                                print_r($detallePago->attributes);
+
+                                            }else{
+                                                print_r($detallePago->attributes);
+                                                die('No se puede guardar el detalle del pago al proveedor');
+                                            }
+                                            print_r($detallePago->getErrors());
+                                        }
                                        
                                         
                                     }
