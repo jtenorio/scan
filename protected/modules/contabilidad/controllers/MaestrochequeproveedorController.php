@@ -32,7 +32,7 @@ class MaestrochequeproveedorController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update','detalle','anticipos','compras','admin'),
+				'actions'=>array('create','update','detalle','anticipos','compras','admin','buscador'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -953,5 +953,36 @@ class MaestrochequeproveedorController extends Controller
 			'model'=>$model,
 		));
 	}
+    
+    public function actionBuscador()
+    {
+        
+        $proveedorByRuc = array();
+        $proveedorByName = array();
+        
+        if(isset($_REQUEST['buscar']))
+        {
+            $listaProveedores = Proveedor::getByName($_REQUEST['buscar']);
+        }
+        else{
+            
+            $listaProveedores = Proveedor::getALlProveedor();
+        }
+
+        foreach($listaProveedores as $prov)
+        {
+//                    echo($prov->cedularuc) ;
+
+            $proveedorByRuc[$prov->id] = $prov->cedularuc;
+            $proveedorByName[$prov->id] = utf8_encode($prov->razonsocial);
+        }
+
+        
+        $this->renderPartial('buscador',array(
+            
+            'proveedorByRuc'=>$proveedorByRuc,
+           'proveedorByName'=>$proveedorByName,
+        ));
+    }
 
 }

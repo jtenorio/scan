@@ -149,4 +149,15 @@ class Proveedor extends CActiveRecord
         $result = Proveedor::model()->findAll('', array('order by razonsocial'));
         return $result;
     }
+    
+    public static function getByName($name)
+    {
+        $q = new CDbCriteria();
+        $q->addSearchCondition('razonsocial', $name);
+ 
+       
+        $proveedor = Proveedor::model()->findAll( $q );     // works!
+        return $proveedor;
+        
+    }
 }
